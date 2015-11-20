@@ -48,7 +48,8 @@
         "knplabs/knp-markdown-bundle": "^1.4",
         "knplabs/rad-view-renderer": "^1.0",
         "knplabs/knp-paginator-bundle": "^2.5",
-        "knplabs/doctrine-behaviors": "^1.2"
+        "knplabs/doctrine-behaviors": "^1.2",
+        "gedmo/doctrine-extensions": "^2.4"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"
