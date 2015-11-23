@@ -14,21 +14,24 @@ use JMS\DiExtraBundle\Annotation as DI;
 
 use Blank\Bundle\AdminBundle\Entity\Post;
 
-class PostController extends Controller
+/**
+ */
+class PostController
 {
 
-   /**
-    * @DI\Inject("doctrine.orm.default_entity_manager")
-    * @var EntityManagerInterface
-    */
-   private $em;
 
+    Doctrine\ORM\EntityManager $em;
 
    /**
-    * @DI\Inject("admin.repository.post")
-    * @var Blank\Bundle\AdminBundle\Entity\PostRepository
+    * @DI\InjectParams({
+    *     "em" = @DI\Inject("doctrine.orm.default_entity_manager"),
+    *     "post" = @DI\Inject("admin.repository.post")
+    * })
     */
-   private $post;
+   function __construct($em, $post){
+       $this->em = $em;
+       $this->post = $post;
+   }
 
     /**
      * @Route("/post/post/{id}")

@@ -50,7 +50,8 @@
         "knplabs/knp-paginator-bundle": "^2.5",
         "knplabs/doctrine-behaviors": "^1.2",
         "gedmo/doctrine-extensions": "^2.4",
-        "php-di/symfony2-bridge": "^1.1"
+        "php-di/symfony2-bridge": "^1.1",
+        "symfony/dependency-injection": "^2.7"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"
