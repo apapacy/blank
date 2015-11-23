@@ -1,0 +1,7 @@
+services:
+  admin.repository.post:
+    class: Blank\Bundle\AdminBundle\Entity\PostRepository
+    factory_service: doctrine.orm.default_entity_manager
+    factory_method: getRepository
+    public: false
+    arguments: [BlankAdminBundle:Post]
