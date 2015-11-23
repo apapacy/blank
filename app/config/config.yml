@@ -51,7 +51,10 @@ assetic:
 
 # Doctrine Configuration
 doctrine:
-    dbal:
+  dbal:
+    default_connection:  default
+    connections:
+      default:
         driver:   pdo_sqlite
         host:     "%database_host%"
         port:     "%database_port%"
@@ -66,10 +69,28 @@ doctrine:
         #   3. Uncomment next line:
         path:     "%database_path%"
 
-    orm:
-        auto_generate_proxy_classes: "%kernel.debug%"
+      development:
+        driver:   pdo_mysql
+        host:     localhost
+        port:     ~
+        dbname:   smartgroup
+        user:     smartgroup
+        password: smartgroup
+        charset:  UTF8
+
+  orm:
+    default_entity_manager: default
+    entity_managers:
+      default:
+        connection: default
         naming_strategy: doctrine.orm.naming_strategy.default
         auto_mapping: true
+        mappings:
+          BlankAdminBundle: ~
+      development:
+        connection: development
+    auto_generate_proxy_classes: "%kernel.debug%"
+
 
 # Swiftmailer Configuration
 swiftmailer:

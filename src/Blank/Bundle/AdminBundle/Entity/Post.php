@@ -9,7 +9,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
 
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="PostRepository")
  * @ORM\Table(name="post", indexes={@ORM\Index(name="post_payProperty", columns={"payProperty"})})
  */
 class Post
@@ -18,7 +18,7 @@ class Post
     /**
      * @ORM\Column(type="integer")
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     protected $id;
 
@@ -80,18 +80,18 @@ class Post
     protected $datePayment;
 
     /**
-     * @ORM\Column(type="boolean", options={"default":false})
+     * @ORM\Column(type="boolean", nullable=true, options={"default":false})
      */
     protected $isClosed;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", nullable=true)
      * @Gedmo\Timestampable(on="change", field={"isClosed"})
      */
     protected $dateClosing;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      */
     protected $memo;
 
