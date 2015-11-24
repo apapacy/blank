@@ -18,23 +18,20 @@ use Blank\Bundle\AdminBundle\Entity\Post;
 use Blank\Bundle\AdminBundle\Entity\PostRepository;
 
 /**
- * @Route("/post")
+ * @Route("/post_svc", service="admin.post.controller")
  */
-class PostController
+class PostServiceController
 {
 
-    /**
-     * @DI\Inject("doctrine.orm.default_entity_manager")
-     * @var EntityManagerInterface
-     */
-    public $em;
 
-    /**
-     * @DI\Inject("admin.repository.post")
-     * @var Blank\Bundle\AdminBundle\Entity\PostRepository
-     */
-    public $post;
+  private $em,
+        $post;
 
+   function __construct(\Doctrine\ORM\EntityManager $em, PostRepository $post)
+   {
+       $this->em = $em;
+       $this->post = $post;
+   }
     /**
      * @Route("/post/{id}")
      * @Template()

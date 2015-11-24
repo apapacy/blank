@@ -7,5 +7,5 @@ services:
     arguments: [BlankAdminBundle:Post]
 
   admin.post.controller:
-    class: Blank\Bundle\AdminBundle\Controller\PostController
+    class: Blank\Bundle\AdminBundle\Controller\PostServiceController
     arguments: ['@doctrine.orm.default_entity_manager', '@admin.repository.post']
