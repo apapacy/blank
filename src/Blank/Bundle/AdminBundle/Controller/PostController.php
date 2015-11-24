@@ -20,7 +20,7 @@ class PostController
 {
 
 
-    Doctrine\ORM\EntityManager $em;
+    //Doctrine\ORM\EntityManager $em;
 
    /**
     * @DI\InjectParams({
