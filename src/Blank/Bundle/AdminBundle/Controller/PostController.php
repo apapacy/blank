@@ -18,7 +18,7 @@ use Blank\Bundle\AdminBundle\Entity\Post;
 use Blank\Bundle\AdminBundle\Entity\PostRepository;
 
 /**
- * @Route("/post")
+ * @Route("/post_plain")
  */
 class PostController
 {
@@ -27,13 +27,19 @@ class PostController
      * @DI\Inject("doctrine.orm.default_entity_manager")
      * @var EntityManagerInterface
      */
-    public $em;
+    private $em;
 
     /**
      * @DI\Inject("admin.repository.post")
      * @var Blank\Bundle\AdminBundle\Entity\PostRepository
      */
-    public $post;
+    private $post;
+
+
+    /**
+     * @DI\Inject("templating")
+     */
+    private $templating;
 
     /**
      * @Route("/post/{id}")
@@ -52,7 +58,7 @@ class PostController
         $post->setPayMethod("cache");
         $this->em->persist($post);
         $this->em->flush();
-        return array('post' => $post);
+        return $this->templating->renderResponse('Post/index.html.twig', array('post' => $post));
     }
 
     /**
@@ -61,11 +67,8 @@ class PostController
      */
     public function getAction($id)
     {
-
         $post = $this->post->find($id);
-        return array('post' => $post);
+        return  $this->templating->renderResponse('BlankAdminBundle:Post:get.html.twig', array('post' => $post));
     }
-
-
 
 }

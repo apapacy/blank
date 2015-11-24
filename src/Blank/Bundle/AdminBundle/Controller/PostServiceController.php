@@ -18,7 +18,7 @@ use Blank\Bundle\AdminBundle\Entity\Post;
 use Blank\Bundle\AdminBundle\Entity\PostRepository;
 
 /**
- * @Route("/post_svc", service="admin.post.controller")
+ * @Route("/post_svc", service="admin.post_svc.controller")
  */
 class PostServiceController
 {
