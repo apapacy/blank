@@ -2,8 +2,10 @@
 
 namespace Blank\Bundle\AdminBundle\Controller;
 
+
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -13,28 +15,26 @@ use FOS\RestBundle\Controller\Annotations as Rest;
 use JMS\DiExtraBundle\Annotation as DI;
 
 use Blank\Bundle\AdminBundle\Entity\Post;
+use Blank\Bundle\AdminBundle\Entity\PostRepository;
 
 /**
+ * @Route("/post", service="admin.post.controller")
  */
 class PostController
 {
 
 
-    Doctrine\ORM\EntityManager $em;
+    private $em,
+        $post;
 
-   /**
-    * @DI\InjectParams({
-    *     "em" = @DI\Inject("doctrine.orm.default_entity_manager"),
-    *     "post" = @DI\Inject("admin.repository.post")
-    * })
-    */
-   function __construct($em, $post){
+   function __construct(\Doctrine\ORM\EntityManager $em, PostRepository $post)
+   {
        $this->em = $em;
        $this->post = $post;
    }
 
     /**
-     * @Route("/post/post/{id}")
+     * @Route("/post/{id}")
      * @Template()
      */
     public function indexAction($id)
@@ -54,11 +54,12 @@ class PostController
     }
 
     /**
-     * @Route("/post/get/{id}")
+     * @Route("/get/{id}")
      * @Template()
      */
     public function getAction($id)
     {
+
         $post = $this->post->find($id);
         return array('post' => $post);
     }
@@ -66,4 +67,3 @@ class PostController
 
 
 }
-

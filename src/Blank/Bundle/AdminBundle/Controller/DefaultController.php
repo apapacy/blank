@@ -10,10 +10,11 @@ class DefaultController extends Controller
 {
     /**
      * @Route("/hello/{name}")
-     * @Template()
      */
     public function indexAction($name)
     {
-        return array('name' => $name);
+        return $this->forward('admin.post.controller:getAction', array('id' => $name));
+        //die('15');
+        //return array('name' => $name);
     }
 }
