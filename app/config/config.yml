@@ -2,6 +2,7 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
+    #- { resource: fosrest.yml }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
@@ -90,6 +91,14 @@ doctrine:
       development:
         connection: development
     auto_generate_proxy_classes: "%kernel.debug%"
+
+# FOSRest Configuration
+fos_rest:
+    param_fetcher_listener: true
+    body_listener: true
+    format_listener: true
+    view:
+        view_response_listener: 'force'
 
 
 # Swiftmailer Configuration

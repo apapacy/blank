@@ -9,6 +9,3 @@ services:
   admin.post_svc.controller:
     class: Blank\Bundle\AdminBundle\Controller\PostServiceController
     arguments: ['@doctrine.orm.default_entity_manager', '@admin.repository.post']
-
-  admin.post_plain.controller:
-    class: Blank\Bundle\AdminBundle\Controller\PostController

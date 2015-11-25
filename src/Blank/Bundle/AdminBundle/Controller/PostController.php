@@ -64,11 +64,15 @@ class PostController
     /**
      * @Route("/get/{id}")
      * @Template()
+     * @Rest\View()
+     * @Method("Get")
      */
-    public function getAction($id)
+    public function getAction(Post $post)
     {
-        $post = $this->post->find($id);
-        return  $this->templating->renderResponse('BlankAdminBundle:Post:get.html.twig', array('post' => $post));
+        //$post = $this->post->find($id);
+        print_r($post);
+        die('*');
+        return $post;
     }
 
 }
