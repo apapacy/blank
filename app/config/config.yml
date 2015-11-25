@@ -103,10 +103,16 @@ sensio_framework_extra:
     view:    { annotations: false }
     router:  { annotations: true }
 
+# Юзает объект при конвертации тела запроса из базы даных по недостающим параметрам
+services: # TODO: check
+  jms_serializer.object_constructor:
+    alias: jms_serializer.doctrine_object_constructor
+    public: false
+
 # FOSRest Configuration
 fos_rest:
    serializer:
-     serialize_null: false
+     serialize_null: false # Нужен дл яисключения параметров, отсутсвующи х в запросе
    body_converter:
      enabled: true
    param_fetcher_listener: true

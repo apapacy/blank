@@ -66,16 +66,17 @@ class PostServiceController
     }
 
     /**
-     * @Rest\Put("/put/{_format}", name="post_svc_put", defaults={"_format"="json"})
+     * @Rest\Put("/put", name="post_svc_put")
      * @ParamConverter("post", converter="fos_rest.request_body", class="Blank\Bundle\AdminBundle\Entity\Post")
      * @return Post
      * @Template()
      */
-    public function putAction(Post $post, $_format)
+    public function putAction(Post $post)
     {
-        print_r($post);
-        die('+');
-        return $post;
+      //$this->post->update($post);
+      //$this->em->persist($post);
+      $this->em->flush();
+      return $post;
     }
 
 
