@@ -14,6 +14,8 @@ use FOS\RestBundle\Controller\FOSRestController;
 use FOS\RestBundle\Controller\Annotations as Rest;
 use JMS\DiExtraBundle\Annotation as DI;
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
+
 use Blank\Bundle\AdminBundle\Entity\Post;
 use Blank\Bundle\AdminBundle\Entity\PostRepository;
 
@@ -53,16 +55,41 @@ class PostServiceController
     }
 
     /**
-     * @Route("/get/{id}")
+     * @Route("/get/{post}")
      * @Template()
      */
-    public function getAction($id)
+    public function getAction(Post $post)
     {
+        print_r($post);
+        die('+');
+        return $post;
+    }
 
-        $post = $this->post->find($id);
-        return array('post' => $post);
+    /**
+     * @Rest\Put("/put/{_format}", name="post_svc_put", defaults={"_format"="json"})
+     * @ParamConverter("post", converter="fos_rest.request_body", class="Blank\Bundle\AdminBundle\Entity\Post")
+     * @return Post
+     * @Template()
+     */
+    public function putAction(Post $post, $_format)
+    {
+        print_r($post);
+        die('+');
+        return $post;
     }
 
 
-
 }
+
+/**
+   * 1PreAuthorize("hasRole('ROLE_ADMIN')")
+   * 1Rest\Post("/rest", defaults={"_format": "json"}, name="three_ugc_post_create")
+   * 1ParamConverter("ugcPost",
+   *      converter="fos_rest.request_body",
+   *      class="Three\Bundle\AppBundle\Entity\UgcPost"
+   * )
+   * 1Rest\View()
+   * 1param UgcPost $ugcPost
+   * 1param ConstraintViolationListInterface $validationErrors
+   * 1return UgcPost
+   */

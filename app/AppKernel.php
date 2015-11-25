@@ -20,10 +20,10 @@ class AppKernel extends Kernel
             new JMS\DiExtraBundle\JMSDiExtraBundle($this),
             new JMS\AopBundle\JMSAopBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle($this),
-            new FOS\RestBundle\FOSRestBundle(),
+            new FOS\RestBundle\FOSRestBundle($this),
 
-            new AppBundle\AppBundle(),
-            new Blank\Bundle\AdminBundle\BlankAdminBundle(),
+            new AppBundle\AppBundle($this),
+            new Blank\Bundle\AdminBundle\BlankAdminBundle($this),
 
         );
 

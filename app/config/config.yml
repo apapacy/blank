@@ -10,6 +10,10 @@ parameters:
     locale: en
 
 framework:
+    request:
+      formats:
+        csv: ['text/csv']
+        json: ['text/plain', '*/*']
     #esi:             ~
     #translator:      { fallbacks: ["%locale%"] }
     secret:          "%secret%"
@@ -92,13 +96,49 @@ doctrine:
         connection: development
     auto_generate_proxy_classes: "%kernel.debug%"
 
+
+
+sensio_framework_extra:
+    request: { converters: true }
+    view:    { annotations: false }
+    router:  { annotations: true }
+
 # FOSRest Configuration
 fos_rest:
-    param_fetcher_listener: true
-    body_listener: true
-    format_listener: true
-    view:
-        view_response_listener: 'force'
+   serializer:
+     serialize_null: false
+   body_converter:
+     enabled: true
+   param_fetcher_listener: true
+   body_listener:
+     enabled: true
+     default_format: json
+     decoders:
+       json: fos_rest.decoder.jsontoform
+       xml: fos_rest.decoder.xml
+   routing_loader:
+     default_format: json
+     include_format: false
+   format_listener:
+     rules:
+       - {  path: '^/', priorities: [], fallback_format: json, prefer_extension: false }
+     media_type:
+       enabled: true
+       service: null
+       version_regex: '/(v|version)=(?P<version>[0-9\.]+)/'
+   view:
+     view_response_listener: 'force'
+     serialize_null: false
+     formats:
+       json: true
+       text: false
+     mime_types:
+       enabled: true
+       service: null
+       #json: ['application/json','text/plain']
+       txt: ['']
+
+
 
 
 # Swiftmailer Configuration
