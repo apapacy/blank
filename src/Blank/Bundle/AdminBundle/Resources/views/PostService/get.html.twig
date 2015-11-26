@@ -1,6 +1,8 @@
 
 
-{% javascripts '@BlankAdminBundle/Resources/public/js/*' %}
+{% javascripts '@BlankAdminBundle/Resources/public/js/*'
+  filter='uglifyjs'
+%}
     <script src="{{ asset_url }}"></script>
 {% endjavascripts %}
 
