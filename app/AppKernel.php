@@ -20,7 +20,7 @@ class AppKernel extends Kernel
             new JMS\DiExtraBundle\JMSDiExtraBundle($this),
             new JMS\AopBundle\JMSAopBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle($this),
-            new JMS\TwigJsBundle\JMSTwigJsBundle(),
+            new JMS\TwigJsBundle\JMSTwigJsBundle($this),
             new FOS\RestBundle\FOSRestBundle($this),
 
 

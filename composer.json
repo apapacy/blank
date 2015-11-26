@@ -29,6 +29,7 @@
         "incenteev/composer-parameter-handler": "~2.0",
         "jms/serializer-bundle": "^1.1",
         "jms/twig-js-bundle": "^1.0",
+        "jms/twig-js": "dev-master",
         "jms/di-extra-bundle": "^1.6",
         "jms/i18n-routing-bundle": "^1.1",
         "liqpay/liqpay": "dev-master",

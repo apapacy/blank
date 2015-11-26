@@ -2,7 +2,6 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
-    #- { resource: fosrest.yml }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
@@ -47,14 +46,20 @@ twig:
 assetic:
     debug:          "%kernel.debug%"
     use_controller: false
-    bundles:        [ BlankAdminBundle ]
+    bundles:
+      - BlankAdminBundle
+      - JMSTwigJsBundle
     #java: /usr/bin/java
     filters:
         cssrewrite: ~
         uglifycss:
-            bin: %kernel.root_dir%/../node_modules/.bin/uglifycss
+          bin: %kernel.root_dir%/../node_modules/.bin/uglifycss
         uglifyjs:
-            bin: %kernel.root_dir%/../node_modules/.bin/uglifyjs
+          bin: %kernel.root_dir%/../node_modules/.bin/uglifyjs
+        twig_js:
+          resource: "%kernel.root_dir%/config/twigjs.xml"
+          apply_to: "\.twig$"
+        yui_js: ~
 
 
         #closure:
@@ -116,6 +121,10 @@ services: # TODO: check
   jms_serializer.object_constructor:
     alias: jms_serializer.doctrine_object_constructor
     public: false
+
+
+  assetic.filter.twig_js:
+    alias: twig_js.assetic_filter
 
 # FOSRest Configuration
 fos_rest:
