@@ -4,5 +4,14 @@
     <script src="{{ asset_url }}"></script>
 {% endjavascripts %}
 
+{% stylesheets '@BlankAdminBundle/Resources/public/css/*'
+  filter='cssrewrite'
+  filter='uglifycss'
+%}
+
+    <link rel="stylesheet" href="{{ asset_url }}" />
+
+{% endstylesheets %}
+
 id: {{ post.id}}<br />+++
 emailDate: {{ post.dateEmail.format('Y-m-d h:m') }} <br />
