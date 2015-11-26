@@ -17,3 +17,9 @@
 
 id: {{ post.id}}<br />+++
 emailDate: {{ post.dateEmail.format('Y-m-d h:m') }} <br />
+
+
+{% javascripts "@BlankAdminBundle/Resources/views/PostService/go.js.twig"
+       filter="twig_js, ?yui_js" %}
+    <script language="javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
