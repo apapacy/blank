@@ -8,6 +8,8 @@ imports:
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: en
+    # При конвертации тела запроса оставить имена свойств без борабогтки (_/lower/upper)
+    jms_serializer.camel_case_naming_strategy.class: JMS\Serializer\Naming\IdenticalPropertyNamingStrategy
 
 framework:
     request:
@@ -45,7 +47,7 @@ twig:
 assetic:
     debug:          "%kernel.debug%"
     use_controller: false
-    bundles:        [ ]
+    bundles:        [ BlankAdminBundle ]
     #java: /usr/bin/java
     filters:
         cssrewrite: ~
@@ -127,7 +129,7 @@ fos_rest:
      include_format: false
    format_listener:
      rules:
-       - {  path: '^/', priorities: [], fallback_format: json, prefer_extension: false }
+       - {  path: '^/', priorities: [json,html,text], fallback_format: json, prefer_extension: false }
      media_type:
        enabled: true
        service: null
@@ -137,13 +139,33 @@ fos_rest:
      serialize_null: false
      formats:
        json: true
-       text: false
+       text: true
+       html: true
      mime_types:
        enabled: true
        service: null
-       #json: ['application/json','text/plain']
+       # 'txt'  => array('text/plain'), перекрывает действие действие fos_ret.fallback_format - поэтому обнуляем
        txt: ['']
 
+#namespace Negotiation;
+# /**
+#  * @author William Durand <william.durand1@gmail.com>
+#  */
+# class FormatNegotiator extends Negotiator implements FormatNegotiatorInterface
+# {
+#     // https://github.com/symfony/symfony/blob/master/src/Symfony/Component/HttpFoundation/Request.php
+#     protected $formats = array(
+#         'html' => array('text/html', 'application/xhtml+xml'),
+#         'txt'  => array('text/plain'),
+#         'js'   => array('application/javascript', 'application/x-javascript', 'text/javascript'),
+#         'css'  => array('text/css'),
+#         'json' => array('application/json', 'application/x-json'),
+#         'jsonld' => array('application/ld+json'),
+#         'xml'  => array('text/xml', 'application/xml', 'application/x-xml'),
+#         'rdf'  => array('application/rdf+xml'),
+#         'atom' => array('application/atom+xml'),
+#         'rss'  => array('application/rss+xml'),
+#     ); ...
 
 
 

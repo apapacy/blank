@@ -70,8 +70,8 @@ class PostController
     public function getAction(Post $post)
     {
         //$post = $this->post->find($id);
-        print_r($post);
-        die('*');
+        //print_r($post);
+        //die('*');
         return $post;
     }
 

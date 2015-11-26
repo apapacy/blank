@@ -6,7 +6,7 @@
 function test(){
   var obj = {};
   obj.id=document.getElementById("id").value;
-  obj.name=document.getElementById("name").value;
+  obj.payProperty=document.getElementById("name").value;
   var xhr = new XMLHttpRequest();
   xhr.open('put', '/app_dev.php/admin/post_svc/put', false);
   //xhr.setRequestHeader('Content-Type', "application/json");

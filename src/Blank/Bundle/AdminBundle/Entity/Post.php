@@ -1,12 +1,8 @@
 <?php
-
-
 namespace Blank\Bundle\AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
-
-
 
 /**
  * @ORM\Entity(repositoryClass="PostRepository")
@@ -14,7 +10,6 @@ use Gedmo\Mapping\Annotation as Gedmo;
  */
 class Post
 {
-
     /**
      * @ORM\Column(type="integer")
      * @ORM\Id

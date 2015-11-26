@@ -1,2 +1,8 @@
-id: {{ id}}<br />
-emailDate: {{ dateEmail.format('Y-m-d h:m') }} <br />
+
+
+{% javascripts '@BlankAdminBundle/Resources/public/js/*' %}
+    <script src="{{ asset_url }}"></script>
+{% endjavascripts %}
+
+id: {{ post.id}}<br />+++
+emailDate: {{ post.dateEmail.format('Y-m-d h:m') }} <br />

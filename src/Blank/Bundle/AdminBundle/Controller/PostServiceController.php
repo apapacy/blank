@@ -57,11 +57,12 @@ class PostServiceController
     /**
      * @Route("/get/{post}")
      * @Template()
+     * @Rest\View(template="@BlankAdminBundle/Resources/views/PostService/get.html.twig")
      */
     public function getAction(Post $post)
     {
-        print_r($post);
-        die('+');
+        //print_r($post);
+        //die('+');
         return $post;
     }
 
