@@ -59,7 +59,7 @@ assetic:
         twig_js:
           resource: "%kernel.root_dir%/config/twigjs.xml"
           apply_to: "\.twig$"
-        yui_js: ~
+        #yui_js: ~
 
 
         #closure:

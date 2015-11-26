@@ -1,17 +1,17 @@
 /**
 *	@name							Elastic
-*	@descripton						Elastic is jQuery plugin that grow and shrink your textareas automatically
-*	@version						1.6.11
-*	@requires						jQuery 1.2.6+
+*	@descripton						Elastic is Jquery plugin that grow and shrink your textareas automaticliy
+*	@version						1.6.3
+*	@requires						Jquery 1.2.6+
 *
 *	@author							Jan Jarfalk
 *	@author-email					jan.jarfalk@unwrongest.com
 *	@author-website					http://www.unwrongest.com
 *
-*	@licence						MIT License - http://www.opensource.org/licenses/mit-license.php
+*	@licens							MIT License - http://www.opensource.org/licenses/mit-license.php
 */
 
-(function($){ 
+(function(jQuery){ 
 	jQuery.fn.extend({  
 		elastic: function() {
 		
@@ -26,39 +26,42 @@
 				'lineHeight',
 				'fontFamily',
 				'width',
-				'fontWeight',
-				'border-top-width',
-				'border-right-width',
-				'border-bottom-width',
-				'border-left-width',
-				'borderTopStyle',
-				'borderTopColor',
-				'borderRightStyle',
-				'borderRightColor',
-				'borderBottomStyle',
-				'borderBottomColor',
-				'borderLeftStyle',
-				'borderLeftColor'
-				];
+				'fontWeight'];
 			
-			return this.each( function() {
+			var pseudoUUID = function(p) {
+				p = p || '';
+				var u = function() { return(((1+Math.random())*0x10000)|0).toString(16).substring(1); }
+				return(p+u()+u()+"-"+u()+"-"+u()+"-"+u()+"-"+u()+u()+u());
+			};
 
+			return this.each( function() {
+				
 				// Elastic only works on textareas
-				if ( this.type !== 'textarea' ) {
+				if ( this.type != 'textarea' ) {
 					return false;
 				}
+				
+				var $textarea	=	jQuery(this),
+					$twin		=	null,
+					twinId		=	$textarea.data('elastic-twin');
 					
-			var $textarea	= jQuery(this),
-				$twin		= jQuery('<div />').css({
-					'position'		: 'absolute',
-					'display'		: 'none',
-					'word-wrap'		: 'break-word',
-					'white-space'	:'pre-wrap'
-				}),
-				lineHeight	= parseInt($textarea.css('line-height'),10) || parseInt($textarea.css('font-size'),'10'),
-				minheight	= parseInt($textarea.css('height'),10) || lineHeight*3,
-				maxheight	= parseInt($textarea.css('max-height'),10) || Number.MAX_VALUE,
-				goalheight	= 0;
+				if ( twinId ) {
+					$twin		=	jQuery('#'+twinId);
+					update();
+					return false;
+				}
+				
+					
+				var	lineHeight	=	parseInt($textarea.css('line-height'),10) || parseInt($textarea.css('font-size'),'10'),
+					minheight	=	parseInt($textarea.css('height'),10) || lineHeight*3,
+					maxheight	=	parseInt($textarea.css('max-height'),10) || Number.MAX_VALUE,
+					goalheight	=	0,
+					i 			=	0;
+				
+				twinId			=	pseudoUUID('elastic');
+				$twin			=	jQuery('<div />').css({'position': 'absolute','display':'none','word-wrap':'break-word'});
+				$twin.attr('id',twinId);
+				$textarea.data('elastic-twin',twinId);
 				
 				// Opera returns max-height of -1 if not set
 				if (maxheight < 0) { maxheight = Number.MAX_VALUE; }
@@ -73,37 +76,31 @@
 					$twin.css(mimics[i].toString(),$textarea.css(mimics[i].toString()));
 				}
 				
-				// Updates the width of the twin. (solution for textareas with widths in percent)
-				function setTwinWidth(){
-					var curatedWidth = Math.floor(parseInt($textarea.width(),10));
-					if($twin.width() !== curatedWidth){
-						$twin.css({'width': curatedWidth + 'px'});
-						
-						// Update height of textarea
-						update(true);
-					}
-				}
 				
 				// Sets a given height and overflow state on the textarea
 				function setHeightAndOverflow(height, overflow){
-				
-					var curratedHeight = Math.floor(parseInt(height,10));
-					if($textarea.height() !== curratedHeight){
+					curratedHeight = Math.floor(parseInt(height,10));
+					if($textarea.height() != curratedHeight){
 						$textarea.css({'height': curratedHeight + 'px','overflow':overflow});
+						
 					}
 				}
 				
+				
 				// This function will update the height of the textarea if necessary 
-				function update(forced) {
+				function update() {
 					
 					// Get curated content from the textarea.
-					var textareaContent = $textarea.val().replace(/&/g,'&amp;').replace(/ {2}/g, '&nbsp;').replace(/<|>/g, '&gt;').replace(/\n/g, '<br />');
+					var textareaContent = $textarea.val().replace(/&/g,'&amp;').replace(/  /g, '&nbsp;').replace(/<|>/g, '&gt;').replace(/\n/g, '<br />');
 					
 					// Compare curated content with curated twin.
 					var twinContent = $twin.html().replace(/<br>/ig,'<br />');
 					
-					if(forced || textareaContent+'&nbsp;' !== twinContent){
+					if((textareaContent+'&nbsp;' != twinContent) || ($textarea.width() != $twin.width())){
 					
+						// Set twin to the same width as the textarea
+						$twin.width($textarea.width());
+						
 						// Add an extra white space so new rows are added when you are at the end of a row.
 						$twin.html(textareaContent+'&nbsp;');
 						
@@ -128,29 +125,14 @@
 				// Hide scrollbars
 				$textarea.css({'overflow':'hidden'});
 				
-				// Update textarea size on keyup, change, cut and paste
-				$textarea.bind('keyup change cut paste', function(){
-					update(); 
-				});
+				// Update textarea size on keyup
+				$textarea.keyup(function(){ update(); });
 				
-				// Update width of twin if browser or textarea is resized (solution for textareas with widths in percent)
-				jQuery(window).bind('resize', setTwinWidth);
-				$textarea.bind('resize', setTwinWidth);
-				$textarea.bind('update', update);
-				
-				// Compact textarea on blur
-				$textarea.bind('blur',function(){
-					if($twin.height() < maxheight){
-						if($twin.height() > minheight) {
-							$textarea.height($twin.height());
-						} else {
-							$textarea.height(minheight);
-						}
-					}
-				});
+				// Define a custom event to allow manual updating
+				$textarea.bind('elasticupdate', function(){ update(); });
 				
 				// And this line is to catch the browser paste event
-				$textarea.bind('input paste',function(e){ setTimeout( update, 250); });				
+				$textarea.live('input paste',function(e){ setTimeout( update, 250); });				
 				
 				// Run update once when elastic is initialized
 				update();
