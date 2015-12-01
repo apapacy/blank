@@ -8,12 +8,15 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
+
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
 use FOS\RestBundle\Controller\FOSRestController;
 use FOS\RestBundle\Controller\Annotations as Rest;
+use FOS\RestBundle\View\View;
 use JMS\DiExtraBundle\Annotation as DI;
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
 use Blank\Bundle\AdminBundle\Entity\Post;
@@ -55,12 +58,16 @@ class PostServiceController
     }
 
     /**
-     * @Route("/get/{post}")
-     * @Template()
-     * @Rest\View(template="@BlankAdminBundle/Resources/views/PostService/get.html.twig")
+     * @Cache(expires="+0 minutes", public=true)
+     * @Rest\Get("/get/{post}.{_format}", name="three_post_read", defaults={"_format"="json"})
+     * @Rest\View
+     * @param Post post
+     * @return Post
+     *
      */
     public function getAction(Post $post)
     {
+      //header('Content-Type: application/json');
         //print_r($post);
         //die('+');
         return $post;
@@ -70,7 +77,7 @@ class PostServiceController
      * @Rest\Put("/put", name="post_svc_put")
      * @ParamConverter("post", converter="fos_rest.request_body", class="Blank\Bundle\AdminBundle\Entity\Post")
      * @return Post
-     * @Template()
+     * @000Template()
      */
     public function putAction(Post $post)
     {

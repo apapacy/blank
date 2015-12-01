@@ -56,9 +56,9 @@ assetic:
           bin: %kernel.root_dir%/../node_modules/.bin/uglifycss
         uglifyjs:
           bin: %kernel.root_dir%/../node_modules/.bin/uglifyjs
-        twig_js:
-          resource: "%kernel.root_dir%/config/twigjs.xml"
-          apply_to: "\.twig$"
+        #twig_js:
+        #  resource: "%kernel.root_dir%/config/twigjs.xml"
+        #  apply_to: "\.twig$"
         #yui_js: ~
 
 
@@ -112,9 +112,13 @@ doctrine:
 
 
 sensio_framework_extra:
-    request: { converters: true }
+    request: { converters: true, auto_convert: true }
     view:    { annotations: false }
     router:  { annotations: true }
+    cache:       { annotations: true }
+    security:    { annotations: true }
+    psr_message: { enabled: false } # Defaults to true if the PSR-7 bridge is installed
+
 
 # Юзает объект при конвертации тела запроса из базы даных по недостающим параметрам
 services: # TODO: check
@@ -132,6 +136,8 @@ fos_rest:
      serialize_null: false # Нужен дл яисключения параметров, отсутсвующи х в запросе
    body_converter:
      enabled: true
+     validate: true
+     validation_errors_argument: validationErrors
    param_fetcher_listener: true
    body_listener:
      enabled: true
@@ -139,28 +145,37 @@ fos_rest:
      decoders:
        json: fos_rest.decoder.jsontoform
        xml: fos_rest.decoder.xml
-   routing_loader:
-     default_format: json
-     include_format: false
-   format_listener:
-     rules:
-       - {  path: '^/', priorities: [json,html,text], fallback_format: json, prefer_extension: false }
-     media_type:
-       enabled: true
-       service: null
-       version_regex: '/(v|version)=(?P<version>[0-9\.]+)/'
+   #routing_loader:
+   #  default_format: json
+   #  include_format: false
+   #format_listener:
+   #  rules:
+   #   - {  path: ^/, priorities: [json, html, text], fallback_format: json, prefer_extension: false }
    view:
-     view_response_listener: 'force'
+     view_response_listener: force
      serialize_null: false
      formats:
        json: true
-       text: true
+       xml: false
        html: true
+     #templating_formats:
+       #json: true
+       #html: true
      mime_types:
+       json: ['application/json', 'application/json;version=1.0', 'application/json;version=1.1']
        enabled: true
        service: null
        # 'txt'  => array('text/plain'), перекрывает действие действие fos_ret.fallback_format - поэтому обнуляем
        txt: ['']
+       html: ['']
+     #force_redirects:
+     #  html: true
+
+   allowed_methods_listener: true
+   access_denied_listener:
+       json: true
+       xml: true
+       html: true
 
 #namespace Negotiation;
 # /**
