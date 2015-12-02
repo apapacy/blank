@@ -102,10 +102,13 @@ doctrine:
       default:
         connection: default
         naming_strategy: doctrine.orm.naming_strategy.default
-        auto_mapping: true
-        #mappings:
-        #  BlankAdminBundle: ~
+        #auto_mapping: true
+        mappings:
+          BlankAdminBundle: ~
       development:
+        #auto_mapping: true
+        mappings:
+          BlankAdminBundle: ~
         connection: development
     auto_generate_proxy_classes: "%kernel.debug%"
 
@@ -163,13 +166,12 @@ fos_rest:
        #html: true
      mime_types:
        json: ['application/json', 'application/json;version=1.0', 'application/json;version=1.1']
-       enabled: true
+       enabled: false
        service: null
        # 'txt'  => array('text/plain'), перекрывает действие действие fos_ret.fallback_format - поэтому обнуляем
        txt: ['']
-       html: ['']
-     #force_redirects:
-     #  html: true
+     force_redirects:
+       html: true
 
    allowed_methods_listener: true
    access_denied_listener:

@@ -3,6 +3,7 @@ namespace Blank\Bundle\AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use JMS\Serializer\Annotation as Serializer;
 
 /**
  * @ORM\Entity(repositoryClass="PostRepository")
@@ -10,15 +11,20 @@ use Gedmo\Mapping\Annotation as Gedmo;
  */
 class Post
 {
+
+
+  static function f(str){return str;}
     /**
      * @ORM\Column(type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @Serializer\Groups({"${'list'}"})
      */
     protected $id;
 
     /**
      * @ORM\Column(type="string", length=64)
+     * @Serializer\Groups({"list", "details"})
      */
     protected $name;
 

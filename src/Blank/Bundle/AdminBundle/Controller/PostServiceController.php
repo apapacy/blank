@@ -59,8 +59,7 @@ class PostServiceController
 
     /**
      * @Cache(expires="+0 minutes", public=true)
-     * @Rest\Get("/get/{post}", name="three_post_read", defaults={"_format": "json"})
-     * @Route("/get/{post}.{_format}", name="_extra_name", defaults={"_format"="html"})
+     * @Rest\Get("/get/{post}", name="admi_post_read_one", defaults={"_format": "json"})
      * @Rest\View()
      * @param Post post
      * @return Post
@@ -68,14 +67,13 @@ class PostServiceController
      */
     public function getAction(Post $post)
     {
-        return $this->post->find(15);
+        return $post;
     }
-
 
     /**
      * @Cache(expires="+0 minutes", public=true)
-     * @Rest\Get("/get.{_format}", name="admin_post_get_list", defaults={"_format"="json"})
-     * @Rest\View()
+     * @Rest\Get("/get.{_format}", name="admin_post_read_list", defaults={"_format"="json"})
+     * @Rest\View(serializerGroups={"details"})
      * @return array
      *
      */
