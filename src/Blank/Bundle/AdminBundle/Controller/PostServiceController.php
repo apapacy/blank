@@ -73,7 +73,7 @@ class PostServiceController
     /**
      * @Cache(expires="+0 minutes", public=true)
      * @Rest\Get("/get.{_format}", name="admin_post_read_list", defaults={"_format"="json"})
-     * @Rest\View(serializerGroups={"details"})
+     * @Rest\View(serializerGroups={"list"})
      * @return array
      *
      */

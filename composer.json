@@ -58,7 +58,8 @@
         "php-di/symfony2-bridge": "^1.1",
         "symfony/dependency-injection": "^2.7",
         "phpunit/phpunit": "4.8.*",
-        "tomfun/js-templating-bundle": "dev-master"
+        "tomfun/js-templating-bundle": "dev-master",
+        "symfony/expression-language": "^3.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"
