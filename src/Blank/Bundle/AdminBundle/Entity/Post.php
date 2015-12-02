@@ -11,9 +11,6 @@ use JMS\Serializer\Annotation as Serializer;
  */
 class Post
 {
-
-
-  static function f($str){return array($str);}
     /**
      * @ORM\Column(type="integer")
      * @ORM\Id
@@ -21,11 +18,6 @@ class Post
      * @Serializer\Groups({"list"})
      */
     protected $id;
-
-
-
-    /// @Serializer\Groups({"[f('list')]"})
-
 
     /**
      * @ORM\Column(type="string", length=64)
