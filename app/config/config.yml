@@ -103,8 +103,8 @@ doctrine:
         connection: default
         naming_strategy: doctrine.orm.naming_strategy.default
         auto_mapping: true
-        mappings:
-          BlankAdminBundle: ~
+        #mappings:
+        #  BlankAdminBundle: ~
       development:
         connection: development
     auto_generate_proxy_classes: "%kernel.debug%"
@@ -133,7 +133,7 @@ services: # TODO: check
 # FOSRest Configuration
 fos_rest:
    serializer:
-     serialize_null: false # Нужен дл яисключения параметров, отсутсвующи х в запросе
+     serialize_null: false # Нужен для исключения параметров, отсутсвующи х в запросе
    body_converter:
      enabled: true
      validate: true

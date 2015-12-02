@@ -23,7 +23,7 @@ use Blank\Bundle\AdminBundle\Entity\Post;
 use Blank\Bundle\AdminBundle\Entity\PostRepository;
 
 /**
- * @Route("/post_svc", service="admin.post_svc.controller")
+ * @Route("/post", service="admin.post.controller")
  */
 class PostServiceController
 {
@@ -59,18 +59,29 @@ class PostServiceController
 
     /**
      * @Cache(expires="+0 minutes", public=true)
-     * @Rest\Get("/get/{post}.{_format}", name="three_post_read", defaults={"_format"="json"})
-     * @Rest\View
+     * @Rest\Get("/get/{post}", name="three_post_read", defaults={"_format": "json"})
+     * @Route("/get/{post}.{_format}", name="_extra_name", defaults={"_format"="html"})
+     * @Rest\View()
      * @param Post post
      * @return Post
      *
      */
     public function getAction(Post $post)
     {
-      //header('Content-Type: application/json');
-        //print_r($post);
-        //die('+');
-        return $post;
+        return $this->post->find(15);
+    }
+
+
+    /**
+     * @Cache(expires="+0 minutes", public=true)
+     * @Rest\Get("/get.{_format}", name="admin_post_get_list", defaults={"_format"="json"})
+     * @Rest\View()
+     * @return array
+     *
+     */
+    public function getListAction()
+    {
+        return $this->post->findAll();
     }
 
     /**

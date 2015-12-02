@@ -6,6 +6,6 @@ services:
     public: true
     arguments: [BlankAdminBundle:Post]
 
-  admin.post_svc.controller:
+  admin.post.controller:
     class: Blank\Bundle\AdminBundle\Controller\PostServiceController
     arguments: ['@doctrine.orm.default_entity_manager', '@admin.repository.post']
