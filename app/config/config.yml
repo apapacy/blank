@@ -148,12 +148,12 @@ fos_rest:
      decoders:
        json: fos_rest.decoder.jsontoform
        xml: fos_rest.decoder.xml
-   #routing_loader:
-   #  default_format: json
-   #  include_format: false
-   #format_listener:
-   #  rules:
-   #   - {  path: ^/, priorities: [json, html, text], fallback_format: json, prefer_extension: false }
+   routing_loader:
+     default_format: json
+  #  include_format: false
+  #format_listener:
+  #  rules:
+  #   - {  path: ^/, priorities: [json, html, text], fallback_format: json, prefer_extension: true }
    view:
      view_response_listener: force
      serialize_null: false

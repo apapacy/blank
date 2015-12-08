@@ -15,6 +15,7 @@ class Post
      * @ORM\Column(type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @Serializer\Groups({"list", "details"})
      */
     protected $id;
 

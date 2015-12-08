@@ -27,8 +27,6 @@ use Blank\Bundle\AdminBundle\Entity\PostRepository;
  */
 class PostServiceController
 {
-
-
    private $em,
            $post;
 
@@ -40,7 +38,7 @@ class PostServiceController
 
    /**
     * @Cache(expires="+0 minutes", public=true)
-    * @Rest\Get("/get/{post}", name="admin_post_read_one", defaults={"_format": "json"})
+    * @Rest\Get("/get/{post}.{_format}", name="admin_post_read_one", defaults={"_format": "json"})
     * @Rest\View()
     * @param Post post
     * @return Post
@@ -65,7 +63,7 @@ class PostServiceController
 
     /**
      * @ParamConverter("post", converter="fos_rest.request_body", class="Blank\Bundle\AdminBundle\Entity\Post")
-     * @Rest\Post("/post", name="admin_post_create_one", defaults={"_format"="json"})
+     * @Rest\Post("/post.{_format}", name="admin_post_create_one", defaults={"_format"="json"})
      * @Rest\View()
      * @param Post post
      * @return Post
@@ -79,10 +77,11 @@ class PostServiceController
 
 
     /**
-     * @Rest\Put("/put", name="post_svc_put")
+     * @Rest\Put("/put{_format}", name="post_svc_put", defaults={"_format"="json"})
      * @ParamConverter("post", converter="fos_rest.request_body", class="Blank\Bundle\AdminBundle\Entity\Post")
+     * @param Post post
      * @return Post
-     * @000Template()
+     * @Rest\View()
      */
     public function putAction(Post $post)
     {

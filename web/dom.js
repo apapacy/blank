@@ -94,7 +94,7 @@ bhv.dom.form2obj = function(form) {
   for (var i = 0; i < form.elements.length; i++){
     if (form.elements[i].tagName == "INPUT") {
       if (form.elements[i].type != "radio" && form.elements[i].type != "checkbox" || form.elements[i].checked){
-        obj[(form.elements[i].name || form.elements[i].id || form.elements[i].type)] = form.elements[i].value;
+        obj[(form.elements[i].name || form.elements[i].id || form.elements[i].type)] = (form.elements[i].value || null);
       }
     } else if (form.elements[i].tagName == "SELECT") {
       for (var k = 0; k < form.elements[i].options.length; k++){
@@ -104,6 +104,7 @@ bhv.dom.form2obj = function(form) {
       }
     }
   }
+  alert(JSON.stringify(obj))
   return JSON.stringify(obj);
 }
 
