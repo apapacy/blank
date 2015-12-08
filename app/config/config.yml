@@ -159,7 +159,7 @@ fos_rest:
      serialize_null: false
      formats:
        json: true
-       xml: false
+       xml: true
        html: true
      #templating_formats:
        #json: true

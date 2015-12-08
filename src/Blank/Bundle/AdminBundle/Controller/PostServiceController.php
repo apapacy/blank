@@ -29,58 +29,54 @@ class PostServiceController
 {
 
 
-  private $em,
-        $post;
+   private $em,
+           $post;
 
    function __construct(\Doctrine\ORM\EntityManager $em, PostRepository $post)
    {
        $this->em = $em;
        $this->post = $post;
    }
-    /**
-     * @Route("/post/{id}")
-     * @Template()
-     */
-    public function indexAction($id)
-    {
-        $post = new Post();
-        $post->setName('Александр');
-        $post->setPhone('097 758 11 54');
-        $post->setEmail('admin@local.host');
-        $post->setProduct('phone Elari (red)');
-        $post->setPrice(1389);
-        $post->setPlace('Харьков');
-        $post->setTransport("novapochta");
-        $post->setPayMethod("cache");
-        $this->em->persist($post);
-        $this->em->flush();
-        return array('post' => $post);
-    }
+
+   /**
+    * @Cache(expires="+0 minutes", public=true)
+    * @Rest\Get("/get/{post}", name="admin_post_read_one", defaults={"_format": "json"})
+    * @Rest\View()
+    * @param Post post
+    * @return Post
+    *
+    */
+   public function getAction(Post $post)
+   {
+       return $post;
+   }
+
+   /**
+    * @Cache(expires="+0 minutes", public=true)
+    * @Rest\Get("/get.{_format}", name="admin_post_read_list", defaults={"_format"="json"})
+    * @Rest\View(serializerGroups={"list"})
+    * @return array
+    *
+    */
+   public function getListAction()
+   {
+       return $this->post->findAll();
+   }
 
     /**
-     * @Cache(expires="+0 minutes", public=true)
-     * @Rest\Get("/get/{post}", name="admi_post_read_one", defaults={"_format": "json"})
+     * @ParamConverter("post", converter="fos_rest.request_body", class="Blank\Bundle\AdminBundle\Entity\Post")
+     * @Rest\Post("/post", name="admin_post_create_one", defaults={"_format"="json"})
      * @Rest\View()
      * @param Post post
      * @return Post
-     *
      */
-    public function getAction(Post $post)
+    public function postAction(Post $post)
     {
+        $this->em->persist($post);
+        $this->em->flush();
         return $post;
     }
 
-    /**
-     * @Cache(expires="+0 minutes", public=true)
-     * @Rest\Get("/get.{_format}", name="admin_post_read_list", defaults={"_format"="json"})
-     * @Rest\View(serializerGroups={"list"})
-     * @return array
-     *
-     */
-    public function getListAction()
-    {
-        return $this->post->findAll();
-    }
 
     /**
      * @Rest\Put("/put", name="post_svc_put")
@@ -90,8 +86,6 @@ class PostServiceController
      */
     public function putAction(Post $post)
     {
-      //$this->post->update($post);
-      //$this->em->persist($post);
       $this->em->flush();
       return $post;
     }

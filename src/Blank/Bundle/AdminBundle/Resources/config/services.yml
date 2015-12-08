@@ -1,11 +1,11 @@
 services:
   admin.repository.post:
     class: Blank\Bundle\AdminBundle\Entity\PostRepository
-    factory_service: doctrine.orm.development_entity_manager
+    factory_service: doctrine.orm.default_entity_manager
     factory_method: getRepository
     public: true
     arguments: [BlankAdminBundle:Post]
 
   admin.post.controller:
     class: Blank\Bundle\AdminBundle\Controller\PostServiceController
-    arguments: ['@doctrine.orm.development_entity_manager', '@admin.repository.post']
+    arguments: ['@doctrine.orm.default_entity_manager', '@admin.repository.post']
