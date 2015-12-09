@@ -115,7 +115,7 @@ doctrine:
 
 
 sensio_framework_extra:
-    request: { converters: true, auto_convert: true }
+    request: { converters: true, auto_convert: false }
     view:    { annotations: false }
     router:  { annotations: true }
     cache:       { annotations: true }
@@ -134,50 +134,81 @@ services: # TODO: check
     alias: twig_js.assetic_filter
 
 # FOSRest Configuration
-fos_rest:
-   serializer:
-     serialize_null: false # Нужен для исключения параметров, отсутсвующи х в запросе
-   body_converter:
-     enabled: true
-     validate: true
-     validation_errors_argument: validationErrors
-   param_fetcher_listener: true
-   body_listener:
-     enabled: true
-     default_format: json
-     decoders:
-       json: fos_rest.decoder.jsontoform
-       xml: fos_rest.decoder.xml
-   routing_loader:
-     default_format: json
-  #  include_format: false
-  #format_listener:
-  #  rules:
-  #   - {  path: ^/, priorities: [json, html, text], fallback_format: json, prefer_extension: true }
-   view:
-     view_response_listener: force
-     serialize_null: false
-     formats:
-       json: true
-       xml: true
-       html: true
-     #templating_formats:
-       #json: true
-       #html: true
-     mime_types:
-       json: ['application/json', 'application/json;version=1.0', 'application/json;version=1.1']
-       enabled: false
-       service: null
-       # 'txt'  => array('text/plain'), перекрывает действие действие fos_ret.fallback_format - поэтому обнуляем
-       txt: ['']
-     force_redirects:
-       html: true
+#fos_rest:
+#   serializer:
+#     serialize_null: false # Нужен для исключения параметров, отсутсвующи х в запросе
+#   body_converter:
+#     enabled: true
+#     validate: true
+#     validation_errors_argument: validationErrors
+#   param_fetcher_listener: true
+#   body_listener:
+#     enabled: true
+#     default_format: json
+#     decoders:
+#       json: fos_rest.decoder.jsontoform
+#       #xml: fos_rest.decoder.xml
+#   routing_loader:
+#     default_format: json
+#     include_format: false
+#   format_listener:
+#     rules:
+#      - {  path: ^/, priorities: [json, html, text], fallback_format: json, prefer_extension: true }
+#   view:
+#     view_response_listener: force
+#     serialize_null: false
+#     formats:
+#       json: true
+#       xml: true
+#       html: true
+#     #templating_formats:
+#       #json: true
+#       #html: true
+#     mime_types:
+#       #json: ['application/json']
+#       enabled: true
+#       #service: null
+#       # 'txt'  => array('text/plain'), перекрывает действие действие fos_ret.fallback_format - поэтому обнуляем
+#       txt: ['']
+#     force_redirects:
+#       html: true
+#   allowed_methods_listener: true
+#   access_denied_listener:
+#       json: true
+#       xml: true
+#       html: true
+jms_di_extra:
+  doctrine_integration: false
+  locations:
+    all_bundles: false
 
-   allowed_methods_listener: true
-   access_denied_listener:
-       json: true
-       xml: true
-       html: true
+jms_serializer:
+  handlers:
+    datetime:
+      default_format: "d.m.Y H:i" #15.10.1992 12:00
+
+fos_rest:
+    routing_loader:
+        default_format: json
+    body_converter:
+        enabled: true
+        validate: true
+    serializer:
+        serialize_null: true
+    view:
+        formats:
+            xml:  false
+            json: true
+            rss:  false
+            yml:  true
+        view_response_listener: force
+    param_fetcher_listener: force
+    format_listener:
+        rules:
+            - { path: '^/admin/', priorities: ['json', 'yml'], fallback_format: json, prefer_extension: true }
+            - { path: '^/', stop: true } # FOSRest should not handle other routes than API
+        media_type:
+            enabled: false
 
 #namespace Negotiation;
 # /**

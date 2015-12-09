@@ -73,7 +73,7 @@ class Post
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
-     * @Gedmo\Timestampable(on="change", field={"payProperty"})
+     * @Gedmo\Timestampable(on="change", field={"payProperty", "email"})
      */
     protected $datePayment;
 

@@ -75,9 +75,8 @@ class PostServiceController
         return $post;
     }
 
-
     /**
-     * @Rest\Put("/put{_format}", name="post_svc_put", defaults={"_format"="json"})
+     * @Rest\Put("/put.{_format}", name="admin_post_update_one", defaults={"_format"="json"})
      * @ParamConverter("post", converter="fos_rest.request_body", class="Blank\Bundle\AdminBundle\Entity\Post")
      * @param Post post
      * @return Post

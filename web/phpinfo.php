@@ -28,7 +28,7 @@ function test(){
   var xhr = new XMLHttpRequest();
 //  xhr.setRequestHeader('Content-Type', "application/json");
   xhr.open('put', '/app_dev.php/admin/post/put', false);
-  xhr.setRequestHeader('Content-Type', "text/plain");
+  xhr.setRequestHeader('Content-Type', "application/json");
   xhr.send(obj);
 
 }
