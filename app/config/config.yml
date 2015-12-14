@@ -115,7 +115,7 @@ doctrine:
 
 
 sensio_framework_extra:
-    request: { converters: true, auto_convert: false }
+    request: { converters: true, auto_convert: true }
     view:    { annotations: false }
     router:  { annotations: true }
     cache:       { annotations: true }
@@ -147,13 +147,14 @@ services: # TODO: check
 #     default_format: json
 #     decoders:
 #       json: fos_rest.decoder.jsontoform
-#       #xml: fos_rest.decoder.xml
+       #xml: fos_rest.decoder.xml
 #   routing_loader:
 #     default_format: json
 #     include_format: false
 #   format_listener:
-#     rules:
-#      - {  path: ^/, priorities: [json, html, text], fallback_format: json, prefer_extension: true }
+#      rules:
+#        - { path: '^/admin', priorities: ['json', 'yml'], fallback_format: json, prefer_extension: true }
+#        - { path: '^/', stop: true } # FOSRest should not handle other routes than API
 #   view:
 #     view_response_listener: force
 #     serialize_null: false
@@ -161,15 +162,15 @@ services: # TODO: check
 #       json: true
 #       xml: true
 #       html: true
-#     #templating_formats:
-#       #json: true
-#       #html: true
+#     templating_formats:
+#       json: true
+#       html: false
 #     mime_types:
-#       #json: ['application/json']
+       #json: ['application/json']
 #       enabled: true
-#       #service: null
-#       # 'txt'  => array('text/plain'), перекрывает действие действие fos_ret.fallback_format - поэтому обнуляем
-#       txt: ['']
+       #service: null
+       # 'txt'  => array('text/plain'), перекрывает действие действие fos_ret.fallback_format - поэтому обнуляем
+       # txt: ['']
 #     force_redirects:
 #       html: true
 #   allowed_methods_listener: true
@@ -177,6 +178,8 @@ services: # TODO: check
 #       json: true
 #       xml: true
 #       html: true
+
+
 jms_di_extra:
   doctrine_integration: false
   locations:
@@ -193,6 +196,14 @@ fos_rest:
     body_converter:
         enabled: true
         validate: true
+    body_listener:
+      enabled: true
+      default_format: json
+      decoders:
+        #json: acme.decoder.json
+        #xml: fos_rest.decoder.xml
+        json: fos_rest.decoder.json
+        #xml: fos_rest.decoder.xml
     serializer:
         serialize_null: true
     view:
@@ -202,12 +213,14 @@ fos_rest:
             rss:  false
             yml:  true
         view_response_listener: force
-    param_fetcher_listener: force
+    param_fetcher_listener: true
     format_listener:
-        rules:
-            - { path: '^/admin/', priorities: ['json', 'yml'], fallback_format: json, prefer_extension: true }
-            - { path: '^/', stop: true } # FOSRest should not handle other routes than API
-        media_type:
+      enabled: true
+      rules:
+        - { path: '^/admin', methods: [ 'GET', 'POST', 'PUT'], priorities: [ 'json'], fallback_format: 'json', prefer_extension: true }
+      #      - { path: '^/admin/', priorities: ['json', 'yml'], fallback_format: json, prefer_extension: true }
+      #      - { path: '^/', stop: true } # FOSRest should not handle other routes than API
+      media_type:
             enabled: false
 
 #namespace Negotiation;

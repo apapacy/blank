@@ -38,7 +38,7 @@ class PostServiceController
 
    /**
     * @Cache(expires="+0 minutes", public=true)
-    * @Rest\Get("/get/{post}.{_format}", name="admin_post_read_one", defaults={"_format": "json"})
+    * @Rest\Get("/get/{post}.{_format}", name="admin_post_read_one", defaults={"_format"="json"})
     * @Rest\View()
     * @param Post post
     * @return Post
@@ -76,7 +76,7 @@ class PostServiceController
     }
 
     /**
-     * @Rest\Put("/put.{_format}", name="admin_post_update_one", defaults={"_format"="json"})
+     * @Rest\Put("/put.{_format}", name="admin_put_update_one", defaults={"_format"="json"})
      * @ParamConverter("post", converter="fos_rest.request_body", class="Blank\Bundle\AdminBundle\Entity\Post")
      * @param Post post
      * @return Post
