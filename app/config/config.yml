@@ -14,7 +14,7 @@ framework:
     request:
       formats:
         csv: ['text/csv']
-        json: ['text/plain', '*/*']
+        #json: ['application/json', '*/*']
     #esi:             ~
     #translator:      { fallbacks: ["%locale%"] }
     secret:          "%secret%"
@@ -217,7 +217,7 @@ fos_rest:
     format_listener:
       enabled: true
       rules:
-        - { path: '^/admin', methods: [ 'GET', 'POST', 'PUT'], priorities: [ 'json'], fallback_format: 'json', prefer_extension: true }
+        - { path: '^/admin', methods: [ 'GET', 'POST', 'PUT', 'DELETE'], priorities: ['json'], fallback_format: 'json', prefer_extension: true }
       #      - { path: '^/admin/', priorities: ['json', 'yml'], fallback_format: json, prefer_extension: true }
       #      - { path: '^/', stop: true } # FOSRest should not handle other routes than API
       media_type:

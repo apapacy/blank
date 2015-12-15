@@ -38,7 +38,7 @@ class PostServiceController
 
    /**
     * @Cache(expires="+0 minutes", public=true)
-    * @Rest\Get("/get/{post}.{_format}", name="admin_post_read_one", defaults={"_format"="json"})
+    * @Rest\Get("/get/{post}", name="admin_post_read_one")
     * @Rest\View()
     * @param Post post
     * @return Post
@@ -51,7 +51,7 @@ class PostServiceController
 
    /**
     * @Cache(expires="+0 minutes", public=true)
-    * @Rest\Get("/get.{_format}", name="admin_post_read_list", defaults={"_format"="json"})
+    * @Rest\Get("/get", name="admin_post_read_list")
     * @Rest\View(serializerGroups={"list"})
     * @return array
     *
@@ -63,7 +63,7 @@ class PostServiceController
 
     /**
      * @ParamConverter("post", converter="fos_rest.request_body", class="Blank\Bundle\AdminBundle\Entity\Post")
-     * @Rest\Post("/post.{_format}", name="admin_post_create_one", defaults={"_format"="json"})
+     * @Rest\Post("/post", name="admin_post_create_one")
      * @Rest\View()
      * @param Post post
      * @return Post
@@ -76,7 +76,7 @@ class PostServiceController
     }
 
     /**
-     * @Rest\Put("/put.{_format}", name="admin_put_update_one", defaults={"_format"="json"})
+     * @Rest\Put("/put", name="admin_put_update_one")
      * @ParamConverter("post", converter="fos_rest.request_body", class="Blank\Bundle\AdminBundle\Entity\Post")
      * @param Post post
      * @return Post

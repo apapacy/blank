@@ -5,6 +5,7 @@
         "This file is @generated automatically"
     ],
     "hash": "2d02c0ce8e14cd1e9689e6805a7b2ade",
+    "content-hash": "1bc7a5a81a2b096b719396825edbae2e",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -143,16 +144,16 @@
         },
         {
             "name": "doctrine/cache",
-            "version": "v1.5.1",
+            "version": "v1.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "2b9cec5a5e722010cbebc91713d4c11eaa064d5e"
+                "reference": "47c7128262da274f590ae6f86eb137a7a64e82af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/2b9cec5a5e722010cbebc91713d4c11eaa064d5e",
-                "reference": "2b9cec5a5e722010cbebc91713d4c11eaa064d5e",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/47c7128262da274f590ae6f86eb137a7a64e82af",
+                "reference": "47c7128262da274f590ae6f86eb137a7a64e82af",
                 "shasum": ""
             },
             "require": {
@@ -209,7 +210,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2015-11-02 18:35:48"
+            "time": "2015-12-03 10:50:37"
         },
         {
             "name": "doctrine/collections",
@@ -279,16 +280,16 @@
         },
         {
             "name": "doctrine/common",
-            "version": "v2.5.1",
+            "version": "v2.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/common.git",
-                "reference": "0009b8f0d4a917aabc971fb089eba80e872f83f9"
+                "reference": "311001fd9865a4d0d59efff4eac6d7dcb3f5270c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/common/zipball/0009b8f0d4a917aabc971fb089eba80e872f83f9",
-                "reference": "0009b8f0d4a917aabc971fb089eba80e872f83f9",
+                "url": "https://api.github.com/repos/doctrine/common/zipball/311001fd9865a4d0d59efff4eac6d7dcb3f5270c",
+                "reference": "311001fd9865a4d0d59efff4eac6d7dcb3f5270c",
                 "shasum": ""
             },
             "require": {
@@ -305,7 +306,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.6.x-dev"
+                    "dev-master": "2.5.x-dev"
                 }
             },
             "autoload": {
@@ -348,7 +349,7 @@
                 "persistence",
                 "spl"
             ],
-            "time": "2015-08-31 13:00:22"
+            "time": "2015-12-04 12:49:42"
         },
         {
             "name": "doctrine/dbal",
@@ -885,22 +886,22 @@
         },
         {
             "name": "friendsofsymfony/elastica-bundle",
-            "version": "v3.1.6",
+            "version": "v3.1.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSElasticaBundle.git",
-                "reference": "f6c14b282e1009b3f3a201ae028e2b0f6919f8e2"
+                "reference": "fd2df906223bcd1398d2f53af0dbb6970dccd7ef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSElasticaBundle/zipball/f6c14b282e1009b3f3a201ae028e2b0f6919f8e2",
-                "reference": "f6c14b282e1009b3f3a201ae028e2b0f6919f8e2",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSElasticaBundle/zipball/fd2df906223bcd1398d2f53af0dbb6970dccd7ef",
+                "reference": "fd2df906223bcd1398d2f53af0dbb6970dccd7ef",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2",
                 "psr/log": "~1.0",
-                "ruflin/elastica": "~2.1,<2.3",
+                "ruflin/elastica": "~2.1",
                 "symfony/console": "~2.1",
                 "symfony/form": "~2.1",
                 "symfony/framework-bundle": "~2.3",
@@ -962,7 +963,7 @@
                 "propel",
                 "search"
             ],
-            "time": "2015-09-17 10:29:58"
+            "time": "2015-12-08 12:14:57"
         },
         {
             "name": "friendsofsymfony/jsrouting-bundle",
@@ -1208,25 +1209,25 @@
         },
         {
             "name": "friendsofsymfony/rest-bundle",
-            "version": "1.7.2",
+            "version": "1.7.4",
             "target-dir": "FOS/RestBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSRestBundle.git",
-                "reference": "70db6f7af4bb198881bfc9106aea633fa3e818c0"
+                "reference": "64ba918b1eb47acb5aa7fef1ce95623235b53775"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSRestBundle/zipball/70db6f7af4bb198881bfc9106aea633fa3e818c0",
-                "reference": "70db6f7af4bb198881bfc9106aea633fa3e818c0",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSRestBundle/zipball/64ba918b1eb47acb5aa7fef1ce95623235b53775",
+                "reference": "64ba918b1eb47acb5aa7fef1ce95623235b53775",
                 "shasum": ""
             },
             "require": {
                 "doctrine/inflector": "~1.0",
-                "php": ">=5.3.9",
+                "php": "^5.3.9|~7.0",
                 "psr/log": "~1.0",
-                "symfony/framework-bundle": "~2.3",
-                "symfony/http-kernel": "~2.3,>=2.3.24",
+                "symfony/framework-bundle": "~2.3|~3.0",
+                "symfony/http-kernel": "^2.3.24|~3.0",
                 "willdurand/jsonp-callback-validator": "~1.0",
                 "willdurand/negotiation": "~1.2"
             },
@@ -1239,15 +1240,16 @@
                 "jms/serializer": "~0.13|~1.0",
                 "jms/serializer-bundle": "~0.12|~1.0",
                 "phpoption/phpoption": "~1.1.0",
-                "sensio/framework-extra-bundle": "~3.0",
+                "sensio/framework-extra-bundle": "~2.0|~3.0",
                 "sllh/php-cs-fixer-styleci-bridge": "^1.3",
-                "symfony/browser-kit": "~2.3",
-                "symfony/dependency-injection": "~2.3",
-                "symfony/form": "~2.3",
-                "symfony/security": "~2.3",
-                "symfony/serializer": "~2.3",
-                "symfony/validator": "~2.3",
-                "symfony/yaml": "~2.3"
+                "symfony/browser-kit": "~2.3|~3.0",
+                "symfony/dependency-injection": "~2.3|~3.0",
+                "symfony/form": "~2.3|~3.0",
+                "symfony/phpunit-bridge": "~2.7|~3.0",
+                "symfony/security": "~2.3|~3.0",
+                "symfony/serializer": "~2.3|~3.0",
+                "symfony/validator": "~2.3|~3.0",
+                "symfony/yaml": "~2.3|~3.0"
             },
             "suggest": {
                 "jms/serializer-bundle": "Add support for advanced serialization capabilities, recommended, requires ~0.12||~1.0",
@@ -1289,7 +1291,7 @@
             "keywords": [
                 "rest"
             ],
-            "time": "2015-10-16 07:05:52"
+            "time": "2015-12-05 14:55:07"
         },
         {
             "name": "friendsofsymfony/user-bundle",
@@ -1656,22 +1658,25 @@
         },
         {
             "name": "jms/aop-bundle",
-            "version": "1.1.0",
-            "target-dir": "JMS/AopBundle",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmittjoh/JMSAopBundle.git",
-                "reference": "66287749c020b4c667c0ff4937b07e66c04bbe71"
+                "reference": "78000d007e74283cc564a58e184d7f62548ad394"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/JMSAopBundle/zipball/66287749c020b4c667c0ff4937b07e66c04bbe71",
-                "reference": "66287749c020b4c667c0ff4937b07e66c04bbe71",
+                "url": "https://api.github.com/repos/schmittjoh/JMSAopBundle/zipball/78000d007e74283cc564a58e184d7f62548ad394",
+                "reference": "78000d007e74283cc564a58e184d7f62548ad394",
                 "shasum": ""
             },
             "require": {
                 "jms/cg": "^1.1",
-                "symfony/framework-bundle": "2.*"
+                "php": ">=5.3.9",
+                "symfony/framework-bundle": "^2.3|^3.0"
+            },
+            "require-dev": {
+                "symfony/phpunit-bridge": "^2.7"
             },
             "type": "symfony-bundle",
             "extra": {
@@ -1680,8 +1685,8 @@
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "JMS\\AopBundle": ""
+                "psr-4": {
+                    "JMS\\AopBundle\\": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1699,7 +1704,7 @@
                 "annotations",
                 "aop"
             ],
-            "time": "2015-09-13 09:02:33"
+            "time": "2015-12-09 16:30:46"
         },
         {
             "name": "jms/cg",
@@ -2411,22 +2416,22 @@
         },
         {
             "name": "knplabs/knp-markdown-bundle",
-            "version": "1.4.1",
+            "version": "1.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/KnpMarkdownBundle.git",
-                "reference": "3454372665d83da6069e3dcfc146b5129d6a5792"
+                "reference": "27d6c8c866a5fef70df3f219e6c2afab25e145ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KnpLabs/KnpMarkdownBundle/zipball/3454372665d83da6069e3dcfc146b5129d6a5792",
-                "reference": "3454372665d83da6069e3dcfc146b5129d6a5792",
+                "url": "https://api.github.com/repos/KnpLabs/KnpMarkdownBundle/zipball/27d6c8c866a5fef70df3f219e6c2afab25e145ce",
+                "reference": "27d6c8c866a5fef70df3f219e6c2afab25e145ce",
                 "shasum": ""
             },
             "require": {
-                "michelf/php-markdown": "1.4.*",
+                "michelf/php-markdown": "~1.4",
                 "php": ">=5.3.9",
-                "symfony/framework-bundle": "~2.1"
+                "symfony/framework-bundle": "~2.3|~3.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "~4.5"
@@ -2468,7 +2473,7 @@
                 "knplabs",
                 "markdown"
             ],
-            "time": "2015-08-20 11:00:10"
+            "time": "2015-12-15 20:41:45"
         },
         {
             "name": "knplabs/knp-menu",
@@ -2537,25 +2542,25 @@
         },
         {
             "name": "knplabs/knp-menu-bundle",
-            "version": "v2.1.0",
+            "version": "v2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/KnpMenuBundle.git",
-                "reference": "2246a70109bdd313a105d2a7ef464a763aacf0cd"
+                "reference": "90aff8e39274d1225dfa3bb7b1dd4e47b7312dca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KnpLabs/KnpMenuBundle/zipball/2246a70109bdd313a105d2a7ef464a763aacf0cd",
-                "reference": "2246a70109bdd313a105d2a7ef464a763aacf0cd",
+                "url": "https://api.github.com/repos/KnpLabs/KnpMenuBundle/zipball/90aff8e39274d1225dfa3bb7b1dd4e47b7312dca",
+                "reference": "90aff8e39274d1225dfa3bb7b1dd4e47b7312dca",
                 "shasum": ""
             },
             "require": {
                 "knplabs/knp-menu": "~2.1",
-                "symfony/framework-bundle": "~2.3"
+                "symfony/framework-bundle": "~2.3|~3.0"
             },
             "require-dev": {
-                "symfony/expression-language": "~2.4",
-                "symfony/phpunit-bridge": "~2.7"
+                "symfony/expression-language": "~2.4|~3.0",
+                "symfony/phpunit-bridge": "~2.7|~3.0"
             },
             "type": "symfony-bundle",
             "extra": {
@@ -2590,7 +2595,7 @@
             "keywords": [
                 "menu"
             ],
-            "time": "2015-09-28 15:23:54"
+            "time": "2015-12-15 12:06:23"
         },
         {
             "name": "knplabs/knp-paginator-bundle",
@@ -2863,16 +2868,16 @@
         },
         {
             "name": "michelf/php-markdown",
-            "version": "1.4.1",
+            "version": "1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/michelf/php-markdown.git",
-                "reference": "de9a19c7bf352d41cc99ed86c3c0ef17e87394b6"
+                "reference": "e1aabe18173231ebcefc90e615565742fc1c7fd9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/michelf/php-markdown/zipball/de9a19c7bf352d41cc99ed86c3c0ef17e87394b6",
-                "reference": "de9a19c7bf352d41cc99ed86c3c0ef17e87394b6",
+                "url": "https://api.github.com/repos/michelf/php-markdown/zipball/e1aabe18173231ebcefc90e615565742fc1c7fd9",
+                "reference": "e1aabe18173231ebcefc90e615565742fc1c7fd9",
                 "shasum": ""
             },
             "require": {
@@ -2895,22 +2900,22 @@
             ],
             "authors": [
                 {
-                    "name": "Michel Fortin",
-                    "email": "michel.fortin@michelf.ca",
-                    "homepage": "http://michelf.ca/",
-                    "role": "Developer"
-                },
-                {
                     "name": "John Gruber",
                     "homepage": "http://daringfireball.net/"
+                },
+                {
+                    "name": "Michel Fortin",
+                    "email": "michel.fortin@michelf.ca",
+                    "homepage": "https://michelf.ca/",
+                    "role": "Developer"
                 }
             ],
             "description": "PHP Markdown",
-            "homepage": "http://michelf.ca/projects/php-markdown/",
+            "homepage": "https://michelf.ca/projects/php-markdown/",
             "keywords": [
                 "markdown"
             ],
-            "time": "2014-05-05 02:43:50"
+            "time": "2015-03-01 12:03:08"
         },
         {
             "name": "monolog/monolog",
@@ -3699,16 +3704,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.8.19",
+            "version": "4.8.21",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "b2caaf8947aba5e002d42126723e9d69795f32b4"
+                "reference": "ea76b17bced0500a28098626b84eda12dbcf119c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/b2caaf8947aba5e002d42126723e9d69795f32b4",
-                "reference": "b2caaf8947aba5e002d42126723e9d69795f32b4",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/ea76b17bced0500a28098626b84eda12dbcf119c",
+                "reference": "ea76b17bced0500a28098626b84eda12dbcf119c",
                 "shasum": ""
             },
             "require": {
@@ -3767,7 +3772,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-11-30 08:18:59"
+            "time": "2015-12-12 07:45:58"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -3865,16 +3870,16 @@
         },
         {
             "name": "ruflin/elastica",
-            "version": "2.2.1",
+            "version": "2.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ruflin/Elastica.git",
-                "reference": "34ca77d721f1fc7c5f3114b48d62ebec943ca193"
+                "reference": "0df1d7b513960ba11d3075652dcd71fcab8dd37a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ruflin/Elastica/zipball/34ca77d721f1fc7c5f3114b48d62ebec943ca193",
-                "reference": "34ca77d721f1fc7c5f3114b48d62ebec943ca193",
+                "url": "https://api.github.com/repos/ruflin/Elastica/zipball/0df1d7b513960ba11d3075652dcd71fcab8dd37a",
+                "reference": "0df1d7b513960ba11d3075652dcd71fcab8dd37a",
                 "shasum": ""
             },
             "require": {
@@ -3918,7 +3923,7 @@
                 "client",
                 "search"
             ],
-            "time": "2015-08-10 19:35:16"
+            "time": "2015-10-19 07:09:10"
         },
         {
             "name": "scrutinizer/rabbitmq",
@@ -4018,28 +4023,28 @@
         },
         {
             "name": "sebastian/diff",
-            "version": "1.3.0",
+            "version": "1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/diff.git",
-                "reference": "863df9687835c62aa423a22412d26fa2ebde3fd3"
+                "reference": "13edfd8706462032c2f52b4b862974dd46b71c9e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/863df9687835c62aa423a22412d26fa2ebde3fd3",
-                "reference": "863df9687835c62aa423a22412d26fa2ebde3fd3",
+                "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/13edfd8706462032c2f52b4b862974dd46b71c9e",
+                "reference": "13edfd8706462032c2f52b4b862974dd46b71c9e",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.2"
+                "phpunit/phpunit": "~4.8"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.3-dev"
+                    "dev-master": "1.4-dev"
                 }
             },
             "autoload": {
@@ -4062,11 +4067,11 @@
                 }
             ],
             "description": "Diff implementation",
-            "homepage": "http://www.github.com/sebastianbergmann/diff",
+            "homepage": "https://github.com/sebastianbergmann/diff",
             "keywords": [
                 "diff"
             ],
-            "time": "2015-02-22 15:13:53"
+            "time": "2015-12-08 07:14:41"
         },
         {
             "name": "sebastian/environment",
@@ -4237,16 +4242,16 @@
         },
         {
             "name": "sebastian/recursion-context",
-            "version": "1.0.1",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/recursion-context.git",
-                "reference": "994d4a811bafe801fb06dccbee797863ba2792ba"
+                "reference": "913401df809e99e4f47b27cdd781f4a258d58791"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/recursion-context/zipball/994d4a811bafe801fb06dccbee797863ba2792ba",
-                "reference": "994d4a811bafe801fb06dccbee797863ba2792ba",
+                "url": "https://api.github.com/repos/sebastianbergmann/recursion-context/zipball/913401df809e99e4f47b27cdd781f4a258d58791",
+                "reference": "913401df809e99e4f47b27cdd781f4a258d58791",
                 "shasum": ""
             },
             "require": {
@@ -4286,7 +4291,7 @@
             ],
             "description": "Provides functionality to recursively process PHP variables",
             "homepage": "http://www.github.com/sebastianbergmann/recursion-context",
-            "time": "2015-06-21 08:04:50"
+            "time": "2015-11-11 19:50:13"
         },
         {
             "name": "sebastian/version",
@@ -5054,12 +5059,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/videlalvaro/php-amqplib.git",
-                "reference": "19a1753fc1d7ea5b1b1d0de732b551df54ce8a98"
+                "reference": "d6bda387d753b04b134c038a2a5c78b97bfea45a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/videlalvaro/php-amqplib/zipball/19a1753fc1d7ea5b1b1d0de732b551df54ce8a98",
-                "reference": "19a1753fc1d7ea5b1b1d0de732b551df54ce8a98",
+                "url": "https://api.github.com/repos/videlalvaro/php-amqplib/zipball/d6bda387d753b04b134c038a2a5c78b97bfea45a",
+                "reference": "d6bda387d753b04b134c038a2a5c78b97bfea45a",
                 "shasum": ""
             },
             "require": {
@@ -5101,20 +5106,20 @@
                 "queue",
                 "rabbitmq"
             ],
-            "time": "2015-10-07 21:22:09"
+            "time": "2015-12-11 13:43:49"
         },
         {
             "name": "willdurand/hateoas",
-            "version": "v2.8.0",
+            "version": "v2.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/willdurand/Hateoas.git",
-                "reference": "0d179393d7214a5bfb82bfdab0f3b3797c496ced"
+                "reference": "6e6ee945100bef3534c9276f0cf1c70d0115670c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/willdurand/Hateoas/zipball/0d179393d7214a5bfb82bfdab0f3b3797c496ced",
-                "reference": "0d179393d7214a5bfb82bfdab0f3b3797c496ced",
+                "url": "https://api.github.com/repos/willdurand/Hateoas/zipball/6e6ee945100bef3534c9276f0cf1c70d0115670c",
+                "reference": "6e6ee945100bef3534c9276f0cf1c70d0115670c",
                 "shasum": ""
             },
             "require": {
@@ -5123,16 +5128,16 @@
                 "jms/metadata": "~1.1",
                 "jms/serializer": "~1.0",
                 "php": ">=5.4",
-                "symfony/expression-language": "~2.4"
+                "symfony/expression-language": "~2.4 || ~3.0"
             },
             "require-dev": {
                 "atoum/atoum": "*@dev",
                 "hautelook/frankenstein": "~0.1",
                 "pagerfanta/pagerfanta": "~1.0",
                 "phpunit/phpunit": "~3.7",
-                "symfony/dependency-injection": "~2.0",
-                "symfony/routing": "~2.0",
-                "symfony/yaml": "~2.0",
+                "symfony/dependency-injection": "~2.0 || ~3.0",
+                "symfony/routing": "~2.0 || ~3.0",
+                "symfony/yaml": "~2.0 || ~3.0",
                 "twig/twig": "~1.12"
             },
             "suggest": {
@@ -5166,7 +5171,7 @@
                 }
             ],
             "description": "A PHP library to support implementing representations for HATEOAS REST web services",
-            "time": "2015-09-09 08:50:45"
+            "time": "2015-12-04 15:31:02"
         },
         {
             "name": "willdurand/hateoas-bundle",
@@ -5175,27 +5180,27 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/willdurand/BazingaHateoasBundle.git",
-                "reference": "ee7523095696be929b7689a4047ea5292e7b034d"
+                "reference": "205a5a16899716f33edfb7a5afc4d451d0d2d0b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/willdurand/BazingaHateoasBundle/zipball/ee7523095696be929b7689a4047ea5292e7b034d",
-                "reference": "ee7523095696be929b7689a4047ea5292e7b034d",
+                "url": "https://api.github.com/repos/willdurand/BazingaHateoasBundle/zipball/205a5a16899716f33edfb7a5afc4d451d0d2d0b2",
+                "reference": "205a5a16899716f33edfb7a5afc4d451d0d2d0b2",
                 "shasum": ""
             },
             "require": {
                 "jms/serializer-bundle": "~1.0",
-                "symfony/framework-bundle": "~2.2",
-                "willdurand/hateoas": "~2.7"
+                "symfony/framework-bundle": "~2.2 || ~3.0",
+                "willdurand/hateoas": "~2.9"
             },
             "require-dev": {
-                "symfony/expression-language": "~2.4",
+                "symfony/expression-language": "~2.4 || ~3.0",
                 "twig/twig": "~1.12"
             },
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.1-dev"
+                    "dev-master": "1.2-dev"
                 }
             },
             "autoload": {
@@ -5218,7 +5223,7 @@
                 "HATEOAS",
                 "rest"
             ],
-            "time": "2015-11-18 18:22:34"
+            "time": "2015-12-07 08:25:05"
         },
         {
             "name": "willdurand/js-translation-bundle",
