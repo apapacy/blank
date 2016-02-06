@@ -7,6 +7,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use FOS\RestBundle\Controller\Annotations as Rest;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
+use Symfony\Component\HttpFoundation\Request;
+
 /**
  * @Route("/json-editor", service="admin.json_editor.controller")
  */
@@ -24,8 +26,9 @@ class JsonEditorController
      *
      * @return
      */
-    public function getAction()
+    public function getAction(Request $request)
     {
+      die($request->getLocale());
     }
 }
 

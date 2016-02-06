@@ -12,9 +12,9 @@ blank_admin:
     resource: "@BlankAdminBundle/Controller/"
     type:     annotation
     prefix:   /admin
-    defaults: {_locale: 'ru'}
+    #defaults: {_locale: 'ru'}
     #requirements:
-    #  _locale: |fr|en|ru
+    #  _locale: fr|en|ru
 
 app:
     resource: "@AppBundle/Controller/"

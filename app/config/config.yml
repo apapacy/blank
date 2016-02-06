@@ -16,7 +16,7 @@ parameters:
 
 jms_i18n_routing:
     default_locale: ru
-    locales: [en, de, ru]
+    locales: [en, de, ru, fr, '']
     strategy: prefix
 
 framework:
