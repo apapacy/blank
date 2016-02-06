@@ -5,8 +5,6 @@ namespace Blank\Bundle\AdminBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use FOS\RestBundle\Controller\Annotations as Rest;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
-
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -15,9 +13,11 @@ use Symfony\Component\HttpFoundation\Request;
 class JsonEditorController
 {
     private $twig;
-    public function __construct($twig)
+    private $root;
+    public function __construct($twig, $root)
     {
         $this->twig = $twig;
+        $this->root = $root;
     }
 
     /**
@@ -28,7 +28,14 @@ class JsonEditorController
      */
     public function getAction(Request $request)
     {
-      die($request->getLocale());
+        $path = $this->root.'/Resources/translations/messages.'.$request->getLocale().'.json';
+        if (file_exists($path)) {
+            $content = file_get_contents($path);
+        } else {
+            $content = '{}';
+        }
+
+        return array('json' => $content);
     }
 }
 

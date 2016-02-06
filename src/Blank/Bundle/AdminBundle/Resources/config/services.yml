@@ -16,4 +16,4 @@ services:
 
   admin.json_editor.controller:
     class: Blank\Bundle\AdminBundle\Controller\JsonEditorController
-    arguments: ['@templating']
+    arguments: ['@templating', '%kernel.root_dir%']
