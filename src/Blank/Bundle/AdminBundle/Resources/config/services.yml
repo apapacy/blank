@@ -9,3 +9,7 @@ services:
   admin.post.controller:
     class: Blank\Bundle\AdminBundle\Controller\PostServiceController
     arguments: ['@doctrine.orm.default_entity_manager', '@admin.repository.post']
+
+  admin.mail.controller:
+    class: Blank\Bundle\AdminBundle\Controller\MailController
+    arguments: ['@mailer', '@templating']
