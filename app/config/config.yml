@@ -89,11 +89,11 @@ doctrine:
 
       development:
         driver:   pdo_mysql
-        host:     localhost
-        port:     ~
-        dbname:   smartgroup
-        user:     smartgroup
-        password: smartgroup
+        host:     "%database_host%"
+        port:     "%database_port%"
+        dbname:   "%database_name%"
+        user:     "%database_user%"
+        password: "%database_password%"
         charset:  UTF8
 
   orm:
@@ -219,7 +219,7 @@ fos_rest:
       rules:
         - { path: '^/admin', methods: [ 'GET', 'POST', 'PUT', 'DELETE'], priorities: ['json'], fallback_format: 'json', prefer_extension: true }
       #      - { path: '^/admin/', priorities: ['json', 'yml'], fallback_format: json, prefer_extension: true }
-      #      - { path: '^/', stop: true } # FOSRest should not handle other routes than API
+        - { path: '^/', stop: true } # FOSRest should not handle other routes than API
       media_type:
             enabled: false
 

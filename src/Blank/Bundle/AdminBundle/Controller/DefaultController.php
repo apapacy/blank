@@ -13,7 +13,7 @@ class DefaultController extends Controller
      */
     public function indexAction($name)
     {
-        return $this->forward('admin.post_svc.controller:getAction', array('id' => $name));
+        return $this->forward('admin.post.controller:getAction', array('id' => $name));
         //die('15');
         //return array('name' => $name);
     }
