@@ -22,6 +22,8 @@ class AppKernel extends Kernel
             new JMS\SerializerBundle\JMSSerializerBundle($this),
             new FOS\RestBundle\FOSRestBundle($this),
             new JMS\TwigJsBundle\JMSTwigJsBundle($this),
+            new JMS\I18nRoutingBundle\JMSI18nRoutingBundle(),
+
 
 
             new AppBundle\AppBundle($this),

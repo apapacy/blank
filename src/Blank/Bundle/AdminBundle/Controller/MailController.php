@@ -9,7 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Blank\Bundle\AdminBundle\Entity\Mail;
 
 /**
- * @Route("/mail", service="admin.mail.controller")
+ * @Route("/api/mail", service="admin.mail.controller")
  */
 class MailController
 {
@@ -32,17 +32,20 @@ class MailController
      */
     public function postAction(Mail $mail)
     {
+      for ($i = 0;$i < 100;++$i) {
+
         $message = \Swift_Message::newInstance()
-              ->setSubject('Hello Email++')
-              ->setFrom('send@example.com')
+              ->setSubject('Hello Email 1++')
+              ->setFrom('An6rey@gmail.com')
               ->setTo('An6rey@gmail.com')
               ->setBody(
               $this->twig->render(
-                                    'BlankAdminBundle:Mail:/body.html.twig',
-                                     (array)$mail
+                                    'BlankAdminBundle:Mail:body.html.twig',
+                                     (array) $mail
                                 ), 'text/html');
-        $status = $this->mailer->send($message);
-        $mail->setName($status);
+            $status = $this->mailer->send($message);
+            $mail->setName($i);
+        }
 
         return $mail;
     }

@@ -6,9 +6,18 @@ imports:
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    locale: en
+    locale: ru
     # При конвертации тела запроса оставить имена свойств без борабогтки (_/lower/upper)
     jms_serializer.camel_case_naming_strategy.class: JMS\Serializer\Naming\IdenticalPropertyNamingStrategy
+
+
+
+
+
+jms_i18n_routing:
+    default_locale: ru
+    locales: [en, de, ru]
+    strategy: prefix
 
 framework:
     request:
@@ -16,7 +25,7 @@ framework:
         csv: ['text/csv']
         #json: ['application/json', '*/*']
     #esi:             ~
-    #translator:      { fallbacks: ["%locale%"] }
+    translator:      { fallbacks: ["%locale%"] }
     secret:          "%secret%"
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
@@ -217,7 +226,7 @@ fos_rest:
     format_listener:
       enabled: true
       rules:
-        - { path: '^/admin', methods: [ 'GET', 'POST', 'PUT', 'DELETE'], priorities: ['json'], fallback_format: 'json', prefer_extension: true }
+        - { path: '^/admin/api', methods: [ 'GET', 'POST', 'PUT', 'DELETE'], priorities: ['json'], fallback_format: 'json', prefer_extension: true }
       #      - { path: '^/admin/', priorities: ['json', 'yml'], fallback_format: json, prefer_extension: true }
         - { path: '^/', stop: true } # FOSRest should not handle other routes than API
       media_type:

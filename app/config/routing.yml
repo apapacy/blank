@@ -1,7 +1,20 @@
+root:
+    pattern: /admin
+    defaults:
+        _controller: FrameworkBundle:Redirect:urlRedirect
+        path: /%locale%/admin
+        permanent: true
+
+
+
+
 blank_admin:
     resource: "@BlankAdminBundle/Controller/"
     type:     annotation
     prefix:   /admin
+    defaults: {_locale: 'ru'}
+    #requirements:
+    #  _locale: |fr|en|ru
 
 app:
     resource: "@AppBundle/Controller/"

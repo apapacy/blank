@@ -13,3 +13,7 @@ services:
   admin.mail.controller:
     class: Blank\Bundle\AdminBundle\Controller\MailController
     arguments: ['@mailer', '@templating']
+
+  admin.json_editor.controller:
+    class: Blank\Bundle\AdminBundle\Controller\JsonEditorController
+    arguments: ['@templating']
