@@ -8,7 +8,6 @@ JSONEditor.defaults.editors.image = JSONEditor.AbstractEditor.extend({
   setValue: function(value, initial) {
     this.value = String(value) || initial;
     $(this.img).attr("src", '/images/uploads/' + this.value);
-    console.log(this)
     //this.fireSetEvent();
     return value;
   },

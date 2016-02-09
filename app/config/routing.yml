@@ -5,13 +5,10 @@ root:
         path: /%locale%/admin
         permanent: true
 
-
-
-
 blank_admin:
     resource: "@BlankAdminBundle/Controller/"
     type:     annotation
-    prefix:   /admin
+    prefix:   /
     #defaults: {_locale: 'ru'}
     #requirements:
     #  _locale: fr|en|ru

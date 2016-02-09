@@ -8,7 +8,7 @@ use FOS\RestBundle\Controller\Annotations as Rest;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
- * @Route("/json-editor", service="admin.json_editor.controller")
+ * @Route("/admin/json-editor", service="admin.json_editor.controller")
  */
 class JsonEditorController
 {
@@ -28,7 +28,7 @@ class JsonEditorController
      */
     public function getAction(Request $request)
     {
-        $path = $this->root.'/Resources/translations/messages.'.$request->getLocale().'.json';
+        $path = $this->root.'/Resources/translations/messages.'.$request->getLocale().'.new.json';
         if (file_exists($path)) {
             $content = file_get_contents($path);
         } else {
@@ -37,6 +37,23 @@ class JsonEditorController
 
         return array('json' => $content);
     }
+
+    /**
+     * @Rest\Post("/post", name="admin_json_editor_post")
+     * @Rest\View()
+     *
+     * @return
+     */
+    public function postAction(Request $request)
+    {
+      $path = $this->root.'/Resources/translations/messages.'.$request->getLocale().'.new.json';
+        file_put_contents(
+            $path,
+            file_get_contents('php://input')
+        );
+        return array();
+    }
+
 }
 
 /*

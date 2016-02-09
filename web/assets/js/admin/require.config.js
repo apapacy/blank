@@ -7,17 +7,13 @@
         'waitSeconds': 30,
         'paths':       {
             'json-editor': '/assets/json-editor',
-        },
-        "map":{
-          "*": {
             "jquery": "jquery-2.1.4"
-          }
         },
         shim: {
             'admin/json-editor': {
                 deps: ['json-editor/dist/jsoneditor.min']
             },
-            'admin/jquery.elastic.source': {
+            'jquery.elastic.source': {
                 deps: ['jquery']
             }
         }
