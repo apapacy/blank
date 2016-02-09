@@ -80,8 +80,8 @@ define(['jquery', 'json-editor/dist/jsoneditor.min', 'admin/image', 'jquery.elas
 
   var jsoneditor = new JSONEditor($editor, {
     schema: schema,
-    theme: "bootstrap3",
-    //theme: "foundation5"
+    //theme: "bootstrap3",
+    theme: "foundation5"
   });
 
   jsoneditor.setValue(JSON.parse($output.value));
