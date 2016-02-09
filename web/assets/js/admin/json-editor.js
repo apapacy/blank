@@ -1,6 +1,5 @@
-define(['jquery', 'json-editor/dist/jsoneditor.min', 'admin/image', 'admin/jquery.elastic.source', 'domReady!'], function(jQuery, jsoneditor, image){
+define(['jquery', 'json-editor/dist/jsoneditor.min', 'admin/image', 'admin/jquery.elastic.source', 'domReady!'], function(jQuery0, jsoneditor, image){
 
-alert($)
     // Add a resolver function to the beginning of the resolver list
     // This will make it run before any other ones
     JSONEditor.defaults.resolvers.unshift(function(schema) {
@@ -85,7 +84,7 @@ alert($)
 
     jsoneditor.setValue(JSON.parse($output.value));
 
-    $editor.addEventListener('change', function (e) {
+    $("#editor *").on('change', function (e) {
         var json = jsoneditor.getValue();
         var jsonValue = JSON.stringify(json, null, 2);
         $.ajax(
@@ -101,7 +100,7 @@ alert($)
             });
     });
 
-    $save.addEventListener('click', function (e) {
+    $("#save").on('click', function (e) {
         var json = jsoneditor.getValue();
         var jsonValue = JSON.stringify(json, null, 2);
         $.ajax(
