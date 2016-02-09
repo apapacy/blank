@@ -1,6 +1,6 @@
 {
   "price": 1389,
-  "title": "Elari",
+  "title": "Elari++",
   "meta": [
     "C++",
     "Barbara Liskov",
@@ -9,19 +9,19 @@
   ],
   "parthners": [
     {
-      "name": "Техноеж",
+      "name": "Техноеж++",
       "url": "tehnoezh.com.ua",
-      "banner": "tehnoezh.jpg"
+      "banner": "123014.png"
     },
     {
-      "name": "STYLUS",
+      "name": "STYLUS++",
       "url": "stylus.com.ua",
-      "banner": "stylus.jpg"
+      "banner": "jeresig-full-profile-2013.jpg"
     },
     {
       "name": "repka.ua",
       "url": "repka.ua",
-      "banner": "repka_logo.jpg"
+      "banner": "twitter-74.png"
     },
     {
       "name": "Территория твоей техники",
@@ -59,9 +59,9 @@
       "banner": "JOY.jpg"
     },
     {
-      "name": "ITbox",
+      "name": "ITbox+",
       "url": "www.itbox.ua",
-      "banner": "ITbox.jpg"
+      "banner": "sitetoolbar__logo_small.svg"
     },
     {
       "name": "Fotos.ua",

@@ -7,7 +7,8 @@ JSONEditor.defaults.editors.image = JSONEditor.AbstractEditor.extend({
   //},
   setValue: function(value, initial) {
     this.value = String(value) || initial;
-    $(this.img).attr("src", '/images/uploads/' + this.value);
+    $(this.img).attr("src", '/uploads/' + this.value);
+    this.onChange();
     //this.fireSetEvent();
     return value;
   },
@@ -35,11 +36,15 @@ JSONEditor.defaults.editors.image = JSONEditor.AbstractEditor.extend({
     this.input.addEventListener('change', function(e) {
       self.setValue(this.value.match(/[^\\\/]+$/)[0]);
       var xhr = new XMLHttpRequest();
-      xhr.open("POST", '/admin/image/upload?filename='+encodeURIComponent(self.getValue()) , false);
+      xhr.open("POST", 'image-upload?filename='+encodeURIComponent(self.getValue()) , false);
       //xhr.setRequestHeader("X_FILENAME", self.getValue());
       xhr.setRequestHeader("Content-Type", 'multipart/form-data');
       xhr.send(this.files[0]);
       self.setValue(self.getValue());
+      e.preventDefault();
+      e.stopPropagation();
+      //self.value = this.checked;
+      self.onChange(true);
     });
 
     this.img = document.createElement("img");

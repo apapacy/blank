@@ -109,7 +109,7 @@ define(['jquery', 'json-editor/dist/jsoneditor.min', 'admin/image', 'jquery.elas
       .done(function(data, textStatus, jqXHR) {})
       .then(function() {});
     $.ajax({
-        url: "/admin/json/publish",
+        url: "publish",
         method: "POST",
         contentType: "text/json",
         data: jsonValue

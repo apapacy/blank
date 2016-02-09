@@ -46,14 +46,52 @@ class JsonEditorController
      */
     public function postAction(Request $request)
     {
-      $path = $this->root.'/Resources/translations/messages.'.$request->getLocale().'.new.json';
+        $path = $this->root.'/Resources/translations/messages.'.$request->getLocale().'.new.json';
         file_put_contents(
             $path,
             file_get_contents('php://input')
         );
+
         return array();
     }
 
+    /**
+     * @Rest\Post("/publish", name="admin_json_editor_publish")
+     * @Rest\View()
+     *
+     * @return
+     */
+    public function publishAction(Request $request)
+    {
+        $path = $this->root.'/Resources/translations/messages.'.$request->getLocale().'.json';
+        file_put_contents(
+            $path,
+            file_get_contents('php://input')
+        );
+
+        return array();
+    }
+
+    /**
+     * @Rest\Post("/image-upload", name="admin_json_editor_image_upload")
+     * @Rest\View()
+     *
+     * @return
+     */
+    public function imageUploadAction(Request $request)
+    {
+        $fileName = $request->get('filename');
+        if (!$fileName) {
+            return '';
+        }
+        $path = $this->root.'/../web/uploads/'.$fileName;
+        file_put_contents(
+                    $path,
+                    file_get_contents('php://input')
+                );
+
+        return '';
+    }
 }
 
 /*
