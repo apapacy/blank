@@ -8,7 +8,8 @@ JSONEditor.defaults.editors.image = JSONEditor.AbstractEditor.extend({
   setValue: function(value, initial) {
     this.value = String(value) || initial;
     $(this.img).attr("src", '/images/uploads/' + this.value);
-    this.fireSetEvent();
+    console.log(this)
+    //this.fireSetEvent();
     return value;
   },
   getValue: function() {
@@ -16,14 +17,14 @@ JSONEditor.defaults.editors.image = JSONEditor.AbstractEditor.extend({
   },
   build: function() {
     var self = this;
-    if (!this.getOption('compact', false)) {
+    if (!this.options.compact) {
       this.header = this.label = this.theme.getFormInputLabel(this.getTitle());
     }
     if (this.schema.description) {
       this.description = this.theme.getFormInputDescription(this.schema.description);
     }
     this.input_type = 'file';
-    if (this.getOption('compact')) {
+    if (this.options.compact) {
       this.container.setAttribute('class',this.container.getAttribute('class') + ' compact');
     }
     this.input = this.theme.getFormInputField(this.input_type);
@@ -44,7 +45,7 @@ JSONEditor.defaults.editors.image = JSONEditor.AbstractEditor.extend({
 
     this.img = document.createElement("img");
     this.img.style.height = "100px";
-    this.control = this.getTheme().getFormControl(this.label, this.img, this.input, this.description);
+    this.control = this.theme.getFormControl(this.label, this.img, this.input, this.description);
     this.container.appendChild(this.control);
     this.value = "";
     self.theme.afterInputReady(self.input);

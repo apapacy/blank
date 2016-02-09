@@ -1,5 +1,6 @@
-define(['jquery', 'json-editor/dist/jquery.jsoneditor', 'admin/image', 'admin/jquery.elastic.source', 'domReady!'], function($, jsoneditor, image){
+define(['jquery', 'json-editor/dist/jsoneditor.min', 'admin/image', 'admin/jquery.elastic.source', 'domReady!'], function(jQuery, jsoneditor, image){
 
+alert($)
     // Add a resolver function to the beginning of the resolver list
     // This will make it run before any other ones
     JSONEditor.defaults.resolvers.unshift(function(schema) {
