@@ -28,6 +28,7 @@ JSONEditor.defaults.editors.image = JSONEditor.AbstractEditor.extend({
       this.container.setAttribute('class',this.container.getAttribute('class') + ' compact');
     }
     this.input = this.theme.getFormInputField(this.input_type);
+    $(this.input).attr("class", "");
     this.input.name="file";
     if (this.schema.readOnly || this.schema.readonly) {
       this.input.disabled = true;
@@ -43,7 +44,6 @@ JSONEditor.defaults.editors.image = JSONEditor.AbstractEditor.extend({
       self.setValue(self.getValue());
       e.preventDefault();
       e.stopPropagation();
-      //self.value = this.checked;
       self.onChange(true);
     });
 

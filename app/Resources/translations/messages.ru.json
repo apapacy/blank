@@ -1,72 +1,72 @@
 {
   "price": 1389,
-  "title": "Elari++",
+  "title": "Elari",
   "meta": [
     "C++",
     "Barbara Liskov",
-    "Brander",
-    "MIT"
+    "MIT",
+    "Brander"
   ],
   "parthners": [
     {
-      "name": "Техноеж",
+      "name": "Техноеж++",
       "url": "tehnoezh.com.ua",
-      "banner": "imgo-2.jpeg"
+      "banner": "123014.png"
     },
     {
-      "name": "STYLUS",
+      "name": "STYLUS++",
       "url": "stylus.com.ua",
-      "banner": "stylus.jpg"
+      "banner": "jeresig-full-profile-2013.jpg"
     },
     {
       "name": "repka.ua",
       "url": "repka.ua",
-      "banner": "repka_logo.jpg"
+      "banner": "twitter-74.png"
     },
     {
       "name": "Территория твоей техники",
       "url": "www.ttt.ua",
-      "banner": "TTT.jpg"
+      "banner": "Screen-Shot-2013-01-11-at-4.png"
     },
     {
       "name": "ROZETKA",
       "url": "rozetka.com.ua",
-      "banner": "Rozetka.jpg"
+      "banner": "ukiyoe-76.png"
     },
     {
       "name": "Notus",
       "url": "www.notus.com.ua",
-      "banner": "Notus.jpg"
+      "banner": "jsninja.jpg"
     },
     {
       "name": "Мобиллак",
       "url": "www.mobilluck.com.ua",
-      "banner": "Mobilluck.jpg"
+      "banner": "jeresig-full-profile-2013.jpg"
     },
     {
       "name": "MOYO",
       "url": "www.moyo.ua",
-      "banner": "MOYO.jpg"
+      "banner": "blackfire.png"
     },
     {
       "name": "АЛЛО",
       "url": "allo.ua",
-      "banner": "Logo_Allo.jpg"
+      "banner": "8bda60d1-8f17-4bfe-8cfa-7f59a336dfee.png"
     },
     {
       "name": "Интернет-магазин Buy Joy",
       "url": "joystore.com.ua",
-      "banner": "JOY.jpg"
+      "banner": "ukiyoe-76.png"
     },
     {
-      "name": "ITbox",
+      "name": "ITbox+",
       "url": "www.itbox.ua",
-      "banner": "ITbox.jpg"
+      "banner": "sitetoolbar__logo_small.svg"
     },
     {
       "name": "Fotos.ua",
       "url": "f.ua",
-      "banner": "Fotos.ua.jpg"
+      "banner": "sensiolabsinsight.png"
     }
   ],
   "page": {
