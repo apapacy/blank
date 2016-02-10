@@ -32,7 +32,7 @@ class MailController
      */
     public function postAction(Mail $mail)
     {
-      for ($i = 0;$i < 100;++$i) {
+      for ($i = 0;$i < 1;++$i) {
 
         $message = \Swift_Message::newInstance()
               ->setSubject('Hello Email 1++')
