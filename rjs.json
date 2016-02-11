@@ -1,0 +1,10 @@
+{
+  "modules": [
+    "app/index.js"
+  ],
+  "optimizer": {
+    "baseUrl": "./web/dependencies/js",
+    "optimize": "uglify",
+    "useStrict": true
+  }
+}
