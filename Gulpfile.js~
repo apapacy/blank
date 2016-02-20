@@ -481,7 +481,7 @@ gulp.task('default', [
   //'dependencies:js:build',
   //'dependencies:stylesheets:build',
   //'dependencies:views:build',
-  //'dependencies:twigs:build',
+  'dependencies:twigs:build',
   //'dependencies:fonts:build',
   //'dependencies:images:build',
   //'generate:assets'

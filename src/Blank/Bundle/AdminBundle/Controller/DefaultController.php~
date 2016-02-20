@@ -5,14 +5,12 @@ namespace Blank\Bundle\AdminBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use FOS\RestBundle\Controller\Annotations as Rest;
-
 
 class DefaultController extends Controller
 {
     /**
-     * @Rest\Route("/hello/{name}")
-     * @Rest\View()
+     * @Route("/hello/{name}")
+     * @Template("@BlankAdmin/Default/index.html.twig")
      */
     public function indexAction($name)
     {

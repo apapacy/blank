@@ -1,5 +1,5 @@
 {
-  "price": 1389,
+  "price": 13899999,
   "title": "Elari",
   "meta": [
     "C++",
@@ -11,22 +11,22 @@
     {
       "name": "Техноеж++",
       "url": "tehnoezh.com.ua",
-      "banner": "5d73772e594e71faecc60ce8c82118485f19fc162459155.jpg"
+      "banner": "123014.png"
     },
     {
       "name": "STYLUS++",
       "url": "stylus.com.ua",
-      "banner": "sensio-labs-product.png"
+      "banner": "jeresig-full-profile-2013.jpg"
     },
     {
       "name": "repka.ua",
       "url": "repka.ua",
-      "banner": "sensiolabsinsight.png"
+      "banner": "twitter-74.png"
     },
     {
       "name": "Территория твоей техники",
       "url": "www.ttt.ua",
-      "banner": "blackfire.png"
+      "banner": "Screen-Shot-2013-01-11-at-4.png"
     },
     {
       "name": "ROZETKA",
