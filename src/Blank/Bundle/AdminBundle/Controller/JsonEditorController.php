@@ -68,7 +68,8 @@ class JsonEditorController
             $path,
             file_get_contents('php://input')
         );
-
+	$fs = new \Symfony\Component\Filesystem\Filesystem();
+	$fs->remove($this->root.'/cache/prod/translations');
         return array();
     }
 

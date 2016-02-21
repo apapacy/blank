@@ -1,5 +1,5 @@
 {
-  "price": 1389,
+  "price": 22222,
   "title": "Elari",
   "meta": [
     "C++",
@@ -9,19 +9,19 @@
   ],
   "parthners": [
     {
-      "name": "Техноеж++",
+      "name": "Техноеж",
       "url": "tehnoezh.com.ua",
       "banner": "5d73772e594e71faecc60ce8c82118485f19fc162459155.jpg"
     },
     {
       "name": "STYLUS++",
       "url": "stylus.com.ua",
-      "banner": "sensio-labs-product.png"
+      "banner": "riot240x.png"
     },
     {
       "name": "repka.ua",
       "url": "repka.ua",
-      "banner": "sensiolabsinsight.png"
+      "banner": "muut.png"
     },
     {
       "name": "Территория твоей техники",
@@ -36,7 +36,7 @@
     {
       "name": "Notus",
       "url": "www.notus.com.ua",
-      "banner": "jsninja.jpg"
+      "banner": "1yW4NnOY_sp0GBq-OtGWE7Q_003.jpeg"
     },
     {
       "name": "Мобиллак",
@@ -46,7 +46,7 @@
     {
       "name": "MOYO",
       "url": "www.moyo.ua",
-      "banner": "blackfire.png"
+      "banner": "1W4DCDWhXEk4omoXR64eXVw.jpeg"
     },
     {
       "name": "АЛЛО",
@@ -56,7 +56,7 @@
     {
       "name": "Интернет-магазин Buy Joy",
       "url": "joystore.com.ua",
-      "banner": "ukiyoe-76.png"
+      "banner": "1yW4NnOY_sp0GBq-OtGWE7Q_003.jpeg"
     },
     {
       "name": "ITbox+",
@@ -66,7 +66,7 @@
     {
       "name": "Fotos.ua",
       "url": "f.ua",
-      "banner": "sensiolabsinsight.png"
+      "banner": "default.png"
     }
   ],
   "page": {
