@@ -29,7 +29,7 @@ class AppKernel extends Kernel
 
             new AppBundle\AppBundle($this),
             new Blank\Bundle\AdminBundle\BlankAdminBundle($this),
-
+            new Acme\StoreBundle\AcmeStoreBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

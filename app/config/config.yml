@@ -105,6 +105,7 @@ doctrine:
         password: "%database_password%"
         charset:  UTF8
 
+
   orm:
     default_entity_manager: default
     entity_managers:
@@ -113,7 +114,7 @@ doctrine:
         naming_strategy: doctrine.orm.naming_strategy.default
         #auto_mapping: true
         mappings:
-          BlankAdminBundle: ~
+         BlankAdminBundle: ~
       development:
         #auto_mapping: true
         mappings:
@@ -121,6 +122,26 @@ doctrine:
         connection: development
     auto_generate_proxy_classes: "%kernel.debug%"
 
+doctrine_mongodb:
+    auto_generate_proxy_classes:  false
+    connections:
+        default:
+            server: mongodb://localhost:27017
+            options:
+                connect: true
+                #persist: true
+                #timeout:              ~
+                #replicaSet: relica0
+    default_database: test_database
+    document_managers:
+        default:
+            metadata_cache_driver: array
+            #auto_mapping: true
+            mappings:
+              AcmeStoreBundle:
+                type: annotation
+                dir: Document
+                #prefix: 'AcmeStoreBundle:Entity'
 
 
 sensio_framework_extra:
